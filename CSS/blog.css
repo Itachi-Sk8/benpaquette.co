@@ -43,28 +43,15 @@
 }
 
 /* ---------- Featured (newest) post ---------- */
-/* On laptops the newest post spans two of the three columns, photo beside text. */
+/* On laptops the newest post spans two of the three columns with a wider photo. */
 @media (min-width: 1024px) {
     .blog-card--featured {
         grid-column: span 2;
-        flex-direction: row;
-    }
-
-    /* The photo fills the text column's height instead of setting it */
-    .blog-card--featured .card__media {
-        position: relative;
-        flex: 0 0 55%;
-        aspect-ratio: auto;
-        min-height: 16rem;
-    }
-
-    .blog-card--featured .card__media img {
-        position: absolute;
-        inset: 0;
+        --card-ratio: 2 / 1;
     }
 
     .blog-card--featured .card__body {
-        padding: var(--space-l);
+        padding: var(--space-m) var(--space-l) var(--space-l);
     }
 
     .blog-card--featured .card__title {
