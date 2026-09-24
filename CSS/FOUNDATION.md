@@ -8,7 +8,7 @@ Files:
 |---|---|
 | `CSS/base.css` | Tokens, reset, layout primitives, header/nav, page header, components, footer. **Shared: don't put page-specific rules here.** |
 | `JS/site.js` | Mobile nav toggle, `aria-current` on nav links, footer year. No dependencies. Loaded with `defer`; the `js` class is set by an inline script in `<head>`. |
-| `CSS/<page>.css` | Page-specific styles only (e.g. `itcareer.css`, `blog.css`, `Blog Posts/blog-post.css`). Loaded **after** `base.css`. |
+| `CSS/<page>.css` | Page-specific styles only (e.g. `itcareer.css`, `blog.css`, `blog-post.css`). Loaded **after** `base.css`. |
 
 ## 1. `<head>` (exact order)
 
@@ -34,7 +34,6 @@ Files:
 
 - Title format: `Page Name | Ben Paquette`. For a blog post: `Post Title | Ben Paquette`.
 - **Use root-absolute paths** (`/CSS/...`, `/Media/...`, `/techblog/...`) everywhere. Never use `../`.
-- The blog-post stylesheet path contains a space. Write it as `/CSS/Blog%20Posts/blog-post.css`.
 - The one-line inline script adds `class="js"` to `<html>` before first paint, so the mobile menu is collapsed with no flash. Keep it inline in `<head>`. `site.js` itself loads with **`defer`** (nav toggle, `aria-current`, footer year) and never blocks rendering.
 - **Remove** from every page: the ionicons `<script>` tags, the `kit.fontawesome.com` script (it duplicates the cdnjs CSS), `X-UA-Compatible`, the dead `opentab`/`openmenu` code on pages that don't use it, and stray `<title>` tags inside `<body>` (gallery has one).
 
