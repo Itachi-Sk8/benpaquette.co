@@ -22,6 +22,7 @@
     --color-on-accent: #10231a;       /* text on green; white fails contrast */
     --color-danger: #ff6b6b;
     --color-warning: #f5d547;
+    --color-info: #6cb6ff;            /* neutral blue category colour */
 
     /* Typography */
     --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -722,15 +723,17 @@ hr {
     font-size: 1.15rem;
 }
 
-/* Tags / category pills. Set --tag-color for a non-green category. */
+/* Tags / category pills. Set --tag-color for another category colour.
+   Text is lifted 25% toward white on a 10% tint so every variant clears 4.5:1
+   on --color-surface (green 5.6, danger 5.4, warning 8.0, info 6.4). */
 .tag {
     display: inline-flex;
     align-items: center;
     padding: 0.15em 0.7em;
     border: 1px solid color-mix(in srgb, var(--tag-color, var(--color-accent)) 45%, transparent);
     border-radius: var(--radius-pill);
-    background: color-mix(in srgb, var(--tag-color, var(--color-accent)) 14%, transparent);
-    color: var(--tag-color, var(--color-accent));
+    background: color-mix(in srgb, var(--tag-color, var(--color-accent)) 10%, transparent);
+    color: color-mix(in srgb, var(--tag-color, var(--color-accent)) 75%, #fff);
     font-size: var(--step--1);
     font-weight: 600;
     line-height: 1.5;
@@ -739,6 +742,7 @@ hr {
 
 .tag--danger  { --tag-color: var(--color-danger); }
 .tag--warning { --tag-color: var(--color-warning); }
+.tag--info    { --tag-color: var(--color-info); }
 
 /* Long-form text (blog posts, about text). Handles spacing between elements
    so pages don't need <br> between paragraphs. */

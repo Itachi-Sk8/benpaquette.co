@@ -135,7 +135,7 @@ Always use tokens. Don't hard-code hex values, px font sizes or random spacing i
 - `--color-bg` `#242424`, `--color-bg-alt` `#1c1c1c` (recessed bands), `--color-surface` `#2e2e2e` (cards), `--color-surface-hover`, `--color-border` `#3d3d3d`
 - `--color-text` `#EBF2EB`, `--color-text-muted` `#b4bcb4`, `--color-heading` `#fff`
 - `--color-accent` `#02B875`, `--color-accent-strong` (hover), `--color-accent-soft` (14% green tint for backgrounds), `--color-on-accent` (dark text for use on green)
-- `--color-danger` `#ff6b6b`, `--color-warning` `#f5d547` (these replace the blog's inline `rgb(226,1,1)` and `yellow`)
+- `--color-danger` `#ff6b6b`, `--color-warning` `#f5d547`, `--color-info` `#6cb6ff` (category colours for tags)
 
 **Type:**
 - `--font-body` is Inter. `--font-heading` is Poppins (applied to h1–h6 automatically).
@@ -212,7 +212,7 @@ Phone-only override: `@media (max-width: 599.98px)`.
 - `.card__media` crops images to 16:10. Change the ratio with `--card-ratio: 4 / 3`.
 - `.card__icon` is a green-tinted icon tile.
 
-**Tags.** `.tag` is a green pill. Add `.tag--danger` (red, the blog's "Career" category) or `.tag--warning` (yellow, "Resources"), or set a custom `--tag-color`.
+**Tags.** `.tag` is a green pill ("Personal"). Add `.tag--info` (blue, the blog's "Career" category), `.tag--warning` (yellow, "Resources") or `.tag--danger` (red), or set a custom `--tag-color`. The text colour is lifted toward white automatically so every variant stays above 4.5:1; check a custom colour against `--color-surface` before using it.
 
 **Headings.**
 - `.section-title` is an h2 with standard bottom margin.
