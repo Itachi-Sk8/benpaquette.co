@@ -1,0 +1,107 @@
+# Gallery photos, in page order. Files: assets/img/gallery/<id>-800.jpg, -1600.jpg
+# (srcset) and -2560.jpg (full-size link); width/height are the 800 file's pixels.
+# Originals are in images/ and CSS/images/JPG/ (not published). See assets/img/MANIFEST.md.
+- id: "1"
+  width: 800
+  height: 534
+  alt: "Live oaks draped in Spanish moss reflected in a still lagoon"
+- id: "2"
+  width: 534
+  height: 800
+  alt: "Stainless-steel sculpture of a figure beneath a tall column of stacked heads, in a brick-paved garden circle"
+- id: "3"
+  width: 800
+  height: 534
+  alt: "Tall dark bronze sculpture rising from a lagoon covered in green duckweed"
+- id: "4"
+  width: 800
+  height: 534
+  alt: "Bronze figure with an outstretched arm on a circular lawn under mossy oaks"
+- id: "17"
+  width: 800
+  height: 534
+  alt: "Curved metal facade of the New Orleans Museum of Art"
+- id: "16"
+  width: 534
+  height: 800
+  alt: "Stone head sculpture with a carved face standing on a lawn"
+- id: "21"
+  width: 800
+  height: 534
+  alt: "Artwork of crossed legs in boots and patterned stockings, lit by a band of light on a dark table"
+- id: "22"
+  width: 800
+  height: 534
+  alt: "Airport runway seen through a tall terminal window"
+- id: "26"
+  width: 590
+  height: 800
+  alt: "Neon sign glowing above a dark stage lined with coloured lights"
+- id: "6"
+  width: 800
+  height: 568
+  alt: "Seated figure sculpture made of steel letters on a lawn"
+- id: "7"
+  width: 800
+  height: 534
+  alt: "Close-up of the seated steel-letter figure sculpture against dark trees"
+- id: "8"
+  width: 534
+  height: 800
+  alt: "Three large lidded urns in pink, yellow and white under an oak tree"
+- id: "9"
+  width: 800
+  height: 534
+  alt: "Shady lawn beneath oaks hung with Spanish moss"
+- id: "10"
+  width: 534
+  height: 800
+  alt: "Tall zig-zag metal lattice sculpture rising above a lagoon"
+- id: "18"
+  width: 800
+  height: 534
+  alt: "Entrance wall of the Sydney and Walda Besthoff Sculpture Garden at the New Orleans Museum of Art"
+- id: "19"
+  width: 534
+  height: 800
+  alt: "Gold statue of an archer on a tall pedestal among pine trees"
+- id: "23"
+  width: 800
+  height: 646
+  alt: "Laundromat storefront lit up at night, reflected in a wet parking lot"
+- id: "24"
+  width: 534
+  height: 800
+  alt: "Small chihuahua wrapped in a white towel after a bath"
+- id: "11"
+  width: 534
+  height: 800
+  alt: "White diving-board sculpture with two figures on the platform, beside a lagoon"
+- id: "12"
+  width: 534
+  height: 800
+  alt: "Low-angle view of the white diving-board sculpture and its two figures"
+- id: "13"
+  width: 534
+  height: 800
+  alt: "The white diving-board sculpture against a blue sky at the edge of the lagoon"
+- id: "14"
+  width: 534
+  height: 800
+  alt: "Dark bronze seated figure in ribbed robes on a granite plinth"
+- id: "15"
+  width: 800
+  height: 534
+  alt: "Large gold ring sculpture framing a lagoon and trees"
+- id: "20"
+  width: 800
+  height: 551
+  alt: "Cafe Du Monde sign above a red-tiled roof in New Orleans"
+- id: "25"
+  width: 571
+  height: 800
+  alt: "Chihuahua in a pink harness sitting on a Snoopy blanket"
+- id: "27"
+  width: 800
+  height: 559
+  alt: "Metal railing at the top of concrete steps leading into choppy water"

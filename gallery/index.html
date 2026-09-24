@@ -23,162 +23,16 @@ styles:
             <div class="container container--wide">
                 <h2 class="section-title gallery__title" id="jul-dec-2024-title">July to December 2024</h2>
                 <ul class="gallery__grid" role="list">
+                    {%- comment -%} Photos, alt text and sizes: _data/gallery.yml {%- endcomment -%}
+                    {%- for photo in site.data.gallery %}
+                    {%- assign base = "/assets/img/gallery/" | append: photo.id %}
                     <li class="gallery__item">
-                        <a class="gallery__link" href="/images/1.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/1.jpg" alt="Live oaks draped in Spanish moss reflected in a still lagoon" width="6024" height="4020" loading="lazy" decoding="async">
+                        <a class="gallery__link" href="{{ base }}-2560.jpg" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="{{ base }}-800.jpg" srcset="{{ base }}-800.jpg 800w, {{ base }}-1600.jpg 1600w" sizes="(min-width: 1440px) 25vw, (min-width: 1024px) 33vw, (min-width: 600px) 50vw, 100vw" alt="{{ photo.alt | escape }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy" decoding="async">
                             <span class="visually-hidden">(opens full size in a new tab)</span>
                         </a>
                     </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/2.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/2.jpg" alt="Stainless-steel sculpture of a figure beneath a tall column of stacked heads, in a brick-paved garden circle" width="4020" height="6024" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/3.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/3.jpg" alt="Tall dark bronze sculpture rising from a lagoon covered in green duckweed" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/4.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/4.jpg" alt="Bronze figure with an outstretched arm on a circular lawn under mossy oaks" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/17.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/17.jpg" alt="Curved metal facade of the New Orleans Museum of Art" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/16.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/16.jpg" alt="Stone head sculpture with a carved face standing on a lawn" width="3754" height="5625" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/21.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/21.jpg" alt="Artwork of crossed legs in boots and patterned stockings, lit by a band of light on a dark table" width="4426" height="2953" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/22.jpg" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/images/22.jpg" alt="Airport runway seen through a tall terminal window" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/26.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/26.jpg" alt="Neon sign glowing above a dark stage lined with coloured lights" width="2623" height="3554" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/6.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/6.jpg" alt="Seated figure sculpture made of steel letters on a lawn" width="5592" height="3968" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/7.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/7.jpg" alt="Close-up of the seated steel-letter figure sculpture against dark trees" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/8.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/8.jpg" alt="Three large lidded urns in pink, yellow and white under an oak tree" width="4020" height="6024" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/9.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/9.jpg" alt="Shady lawn beneath oaks hung with Spanish moss" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/10.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/10.jpg" alt="Tall zig-zag metal lattice sculpture rising above a lagoon" width="4020" height="6024" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/18.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/18.jpg" alt="Entrance wall of the Sydney and Walda Besthoff Sculpture Garden at the New Orleans Museum of Art" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/19.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/19.jpg" alt="Gold statue of an archer on a tall pedestal among pine trees" width="3446" height="5163" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/23.jpg" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/images/23.jpg" alt="Laundromat storefront lit up at night, reflected in a wet parking lot" width="4781" height="3860" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/24.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/24.jpg" alt="Small chihuahua wrapped in a white towel after a bath" width="3627" height="5436" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/11.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/11.jpg" alt="White diving-board sculpture with two figures on the platform, beside a lagoon" width="4020" height="6024" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/12.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/12.jpg" alt="Low-angle view of the white diving-board sculpture and its two figures" width="4020" height="6024" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/13.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/13.jpg" alt="The white diving-board sculpture against a blue sky at the edge of the lagoon" width="4020" height="6024" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/14.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/14.jpg" alt="Dark bronze seated figure in ribbed robes on a granite plinth" width="3911" height="5860" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/15.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/15.jpg" alt="Large gold ring sculpture framing a lagoon and trees" width="6024" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/20.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/20.jpg" alt="Cafe Du Monde sign above a red-tiled roof in New Orleans" width="5706" height="3933" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/25.png" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/CSS/images/JPG/25.jpg" alt="Chihuahua in a pink harness sitting on a Snoopy blanket" width="3256" height="4560" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
-                    <li class="gallery__item">
-                        <a class="gallery__link" href="/images/27.jpg" target="_blank" rel="noopener">
-                            <img class="gallery__img" src="/images/27.jpg" alt="Metal railing at the top of concrete steps leading into choppy water" width="5757" height="4020" loading="lazy" decoding="async">
-                            <span class="visually-hidden">(opens full size in a new tab)</span>
-                        </a>
-                    </li>
+                    {%- endfor %}
                 </ul>
             </div>
         </section>

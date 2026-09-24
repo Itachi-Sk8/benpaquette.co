@@ -19,7 +19,7 @@ styles:
                     {%- for post in site.posts %}
                     <li class="card card--link blog-card{% if forloop.first %} blog-card--featured{% endif %}">
                         <div class="card__media">
-                            <img{% if post.card.class %} class="{{ post.card.class }}"{% endif %} src="{{ post.card.src }}" alt="{{ post.card.alt | escape }}" width="{{ post.card.width }}" height="{{ post.card.height }}" loading="lazy">
+                            <img{% if post.card.class %} class="{{ post.card.class }}"{% endif %} src="{{ post.card.src }}"{% if post.card.srcset %} srcset="{{ post.card.srcset }}" sizes="{% if forloop.first %}(min-width: 1024px) 40vw{% else %}(min-width: 1024px) 33vw{% endif %}, (min-width: 600px) 50vw, 100vw"{% endif %} alt="{{ post.card.alt | escape }}" width="{{ post.card.width }}" height="{{ post.card.height }}"{% if forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
                         </div>
                         <div class="card__body">
                             <p class="blog-card__meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time><span aria-hidden="true">&middot;</span><span>{{ post.read_time }} min read</span></p>

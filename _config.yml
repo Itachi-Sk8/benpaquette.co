@@ -67,3 +67,18 @@ exclude:
   - Gemfile.lock
   - vendor/
   - node_modules/
+  # Original images. The site serves the web-sized copies in assets/img/ instead
+  # (see assets/img/MANIFEST.md); nothing in the built site links to these.
+  # CSS/images/grey-hack-2.jpg stays published: it is smaller than its re-encode.
+  - images/
+  - CSS/images/JPG/
+  - "CSS/images/*.png"
+  - "CSS/images/blog-post-*"
+  - "CSS/images/grey-hack-[134].jpg"
+  - CSS/images/cybersecurity-1.jpg
+  - CSS/images/nola-1.jpg
+  - CSS/images/Paquette_HDI_Certification.jpg
+  - Media/BEN_2.jpg
+  - Media/Benjamin-Paquette.png
+  - Media/background.jpg
+  - Media/favicon.png
