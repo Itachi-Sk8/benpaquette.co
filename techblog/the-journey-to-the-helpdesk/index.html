@@ -1,117 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Blog Posts</title>
-        <link rel="shortcut icon" type="image/png" href="/Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="/CSS/Blog Posts/blog-post.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Journey to the Helpdesk | Ben Paquette</title>
+    <meta name="description" content="From applying to 30 jobs to finally getting a foot in the door: Ben Paquette's job search that led to a helpdesk role at the University of Georgia.">
+    <meta name="theme-color" content="#242424">
+    <link rel="icon" type="image/png" href="/Media/favicon.png">
 
-    <body>
-        <div class="title">
-            <h1>Tech Blog</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/base.css">
+    <link rel="stylesheet" href="/CSS/Blog%20Posts/blog-post.css">
+    <script src="/JS/site.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========== Site header (shared) ========== -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="/">
+                <span class="site-brand__mark" aria-hidden="true">BP</span>
+                Ben Paquette
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="/">Home</a></li>
+                    <li><a class="site-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="site-nav__link" href="/techblog/" aria-current="page">Tech Blog</a></li>
+                    <li><a class="site-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="site-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="line-break"></div>
+    <main id="main">
+        <article class="post">
+            <header class="page-header container container--narrow post__header">
+                <a class="page-header__eyebrow post__back" href="/techblog/"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Tech Blog</a>
+                <h1 class="page-header__title post__title">The Journey to the Helpdesk</h1>
+                <div class="post__meta">
+                    <time class="post__meta-item" datetime="2024-07-26"><i class="fa-regular fa-calendar" aria-hidden="true"></i> July 26th, 2024</time>
+                    <span class="tag">Personal</span>
+                    <span class="post__meta-item"><i class="fa-regular fa-clock" aria-hidden="true"></i> 5.5 Minute Read</span>
+                </div>
+                <ul class="post__tags" role="list" aria-label="Topics">
+                    <li>#JobSearch</li>
+                    <li>#IT</li>
+                    <li>#Networking</li>
+                    <li>#Moving</li>
+                    <li>#UGA</li>
+                </ul>
+            </header>
 
-        <div class="header">
-            <div class="container-header">
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
+            <div class="container container--narrow">
+                <div class="post__body post-content prose">
+                    <p>During my application process, I sent over 30 applications to a wide variety of jobs within the IT field. From travel tech jobs in Louisiana to hospital workstation service positions in Georgia. Out of all of my applications I sent in, I got two responses.</p>
+                    <p>The first one I got was from UGA asking me to come for an in-person interview for the middle of May while I was still living in New Orleans till August. This job was severely below what I was asking for salary-wise and to buy plane tickets would have costed me around 700 dollars. I was also working a job that wouldn't really let me take off time if I needed it, so this job was looking less likely from every aspect. The manager Jake was understanding and really good with communicating back and forth with me about the whole process.</p>
+                    <p>The other one was a MSP in Athens, GA for a Helpdesk Engineer position (Glorified Helpdesk Title) and all I got was an email.</p>
+                    <p>"Thank you for sending in your resume. Please send your expected salary as well. Also are you looking to move to this area? Because we do not offer relocation assistance."</p>
+                    <p>I responded with "Thank you for reaching out to about my application. My expected salary is between $45,000-$55,000. I will be moving to the area on August 1st, but I am available this coming week for anything virtual if necessary."</p>
+                    <img class="post__image" src="/CSS/images/application-1.png" alt="Screenshot of the Gmail thread: the recruiter asking for expected salary and relocation plans, and Ben's reply" width="1334" height="743" loading="lazy">
+                    <p>I never heard back. This seemed to be a common occurrence with job applications for me. Spending 10 - 30 minutes filling out an application, tailoring my resume and cover letter for every job just to get nothing in return. At this point I was thinking this was helpless for me and I was going to have to get a random job to hopefully make ends meet. The goal of starting a career in IT was looking less likely and the weight of life started to get heavier and heavier. The months kept going by and my time working as a Clinical Trials Coordinator was getting to the end very fast. I packed up my U-Haul to drive to Georgia at 8am on July 26th with no job and no interviews.</p>
+                    <p>I remember so vividly stopping at a gas station an hour from Mobile, Alabama looking at my phone to see an email from none other than Jake, the Manager from UGA.</p>
+                    <p>Jake emailed me an invitation for an in-person interview the following week and I drove the next 8 hours with the biggest smile on my face.</p>
+                    <p class="post__signoff">~ Ben Paquette</p>
+                </div>
+
+                <nav class="post-nav" aria-label="More posts">
+                    <a class="post-nav__link post-nav__link--prev" href="/techblog/clinical-trials-coordinator-to-the-world-of-information-technology/" rel="prev">
+                        <span class="post-nav__label">&laquo; Previous</span>
+                        <span class="post-nav__title">Clinical Trials Coordinator to the World of Information Technology</span>
+                    </a>
+                    <a class="post-nav__link post-nav__link--next" href="/techblog/6-months-in-helpdesk/" rel="next">
+                        <span class="post-nav__label">Next &raquo;</span>
+                        <span class="post-nav__title">6 Months in Helpdesk</span>
+                    </a>
+                    <a class="btn btn--outline btn--small post-nav__all" href="/techblog/">All posts</a>
                 </nav>
             </div>
+        </article>
+    </main>
+
+    <!-- ========== Site footer (shared) ========== -->
+    <footer class="site-footer">
+        <div class="site-footer__waves" aria-hidden="true">
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
         </div>
-
-        <main>
-            <article class="blog-post">
-                <header class="blog-header">
-                    <h3 class="post-title">The Journey to the Helpdesk</h3>
-                    <div class="post-meta">
-                        <br>
-                        <span class="post-date">July 26th, 2024</span>
-                        <br>
-                        <br>
-                        <span class="post-tags">#JobSearch #IT #Networking #Moving #UGA</span>
-                        <br>
-                    </div>
-                </header>
-
-                <div class="post-content">
-                    <p>During my application process, I sent over 30 applications to a wide variety of jobs within the IT field. From travel tech jobs in Louisiana to hospital workstation service positions in Georgia. Out of all of my applications I sent in, I got two responses.
-                    </p>
-                    <br>
-                    <p>The first one I got was from UGA asking me to come for an in-person interview for the middle of May while I was still living in New Orleans till August. This job was severely below what I was asking for salary-wise and to buy plane tickets would have costed me around 700 dollars. I was also working a job that wouldn't really let me take off time if I needed it, so this job was looking less likely from every aspect. The manager Jake was understanding and really good with communicating back and forth with me about the whole process.  
-                    </p>
-                    <br>
-                    <p>The other one was a MSP in Athens, GA for a Helpdesk Engineer position (Glorified Helpdesk Title) and all I got was an email. 
-                    </p>
-                    <br>
-                    <p>"Thank you for sending in your resume. Please send your expected salary as well. Also are you looking to move to this area? Because we do not offer relocation assistance."
-                    </p>
-                    <br>
-                    <p>I responded with "Thank you for reaching out to about my application. My expected salary is between $45,000-$55,000. I will be moving to the area on August 1st, but I am available this coming week for anything virtual if necessary."
-                    </p>
-                    <img class="blog-pictures" src="/CSS/images/application-1.png" style="width: 95%;">
-                    <br>
-                    <p>I never heard back. This seemed to be a common occurrence with job applications for me. Spending 10 - 30 minutes filling out an application, tailoring my resume and cover letter for every job just to get nothing in return. At this point I was thinking this was helpless for me and I was going to have to get a random job to hopefully make ends meet. The goal of starting a career in IT was looking less likely and the weight of life started to get heavier and heavier. The months kept going by and my time working as a Clinical Trials Coordinator was getting to the end very fast. I packed up my U-Haul to drive to Georgia at 8am on July 26th with no job and no interviews. 
-                    </p>
-                    <br>
-                    <p>I remember so vividly stopping at a gas station an hour from Mobile, Alabama looking at my phone to see an email from none other than Jake, the Manager from UGA.
-                    </p>
-                    <br>
-                    <p>Jake emailed me an invitation for an in-person interview the following week and I drove the next 8 hours with the biggest smile on my face.
-                    </p>
-                    <br>
-                    <p> ~ Ben Paquette</p>
-                </div>
-            </article>
-            <div class="transition">
-                <a href="/techblog/clinical-trials-coordinator-to-the-world-of-information-technology/" class="previous"> &laquo; Previous</a>
-                <a href="/techblog/6-months-in-helpdesk/" class="next">Next &raquo;</a>
-            </div>
-        </main>
-
-        <!---------- Footer ------------>
-        <footer class="footer">
-            <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social-icon">
-              <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
+        <div class="container site-footer__inner">
+            <ul class="social-links">
+                <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
             </ul>
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-        
-            </ul>
-            <p>&copy;2024 Benjamin Paquette | All Rights Reserved</p>
-          </footer>
-          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    </body>
-    
+            <nav aria-label="Footer">
+                <ul class="footer-nav__list">
+                    <li><a class="footer-nav__link" href="/">Home</a></li>
+                    <li><a class="footer-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="footer-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="footer-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="footer-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+            <p class="site-footer__copy">&copy; <span data-current-year>2025</span> Benjamin Paquette. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

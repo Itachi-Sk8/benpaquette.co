@@ -1,340 +1,101 @@
-/*---------- General Page CSS----------*/
+/* gallery.css — Gallery page only. Loaded after base.css. Mobile-first. */
 
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-}
-html{
-  scroll-behavior: smooth;
-}
-body{
-  background: #242424;
-  color: #EBF2EB;
-  height: 100vh;
-}
-
-/*-------------- Header Section -------------*/
-
-.title{
-    text-align: center;
-    color: #FFF;
-    font-size: 40px;
-    margin:30px 20px;
-}
-
-.line-break{
-    background-color: #02B875;
-    padding: 2px 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.header{
-    width: 100%;
-    padding: 10px 10px 
-}
-.container{
-    padding: 10px 10px;
-}
-.container-header{
-    text-align: center;
+/* ---------- Collection links ---------- */
+.gallery-periods__list {
     display: flex;
-    justify-content: center;
-    padding: 10px 10px;
-}
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
-}
-nav ul li{
-    display: inline-block;
-    text-align: center;
-    list-style: none;
-    padding: 40px 40px;
-}
-nav ul li a{
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 40px;
-    position: relative;
-    
-}
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #02B875;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
-nav ul li a:hover::after{
-    width: 100%;
-}
-.camera{
-  font-size: 23px;
-  color: #EBF2EB;
-  text-align: center;
-  margin-bottom: 40px;
-  margin-top: 15px;
-}
-.header-text p span{
-  color: #02B875;
-}
-.quicklinks{
-  justify-content: center;
-}
-
-.dates{
-  font-size: 32px;
-}
-
-.labels{
-    color: #02B875;
-    font-size: 60px;
-    margin-left: 25px;
-    padding: 30px 5px;
-    display: flex;
     justify-content: center;
+    gap: var(--space-2xs);
 }
 
-.labels p{
-  margin: 10px 10px;
-  padding: 5px 20px;
+.gallery-periods__link {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0 var(--space-2xs);
+    min-height: 2.75rem;
+    padding: var(--space-2xs) var(--space-s);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    font-size: var(--step--1);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 
-.spacer{
-  margin: 75px;
-  color: #242424
+a.gallery-periods__link:hover {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
 }
 
-/* End of Header */
-/* --------------------------------- */
-/* Start of Gallery */
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+.gallery-periods__link--soon {
+    border-color: var(--color-border);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-weight: 500;
 }
 
-    /* Create three equal columns that sits next to each other */
-.column {
-  flex: 33%;
-  max-width: 33%;
-  padding: 0 4px;
-  
+.gallery-periods__note {
+    font-size: 0.8em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
+/* ---------- Photo grid (CSS-columns masonry keeps each photo's own ratio) ---------- */
+.gallery__title {
+    text-align: center;
 }
 
-
-
-/* ----------------- Footer---------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-
-.footer {
-  position: relative;
-  width: 100%;
-  background: #02B875;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.gallery__grid {
+    columns: 1;
+    column-gap: var(--space-s);
 }
 
-.social-icon,
-.menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
+.gallery__item {
+    break-inside: avoid;
+    margin-bottom: var(--space-s);
 }
 
-.social-icon__item,
-.menu__item {
-  list-style: none;
+.gallery__link {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius-m);
+    background: var(--color-bg-alt);
+    box-shadow: var(--shadow-card);
 }
 
-.social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 20px;
-  display: inline-block;
-  transition: 0.5s;
-}
-.social-icon__link:hover {
-  transform: translateY(-10px);
+.gallery__link:focus-visible {
+    outline-offset: 3px;
 }
 
-.menu__link {
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
+.gallery__img {
+    width: 100%;
+    transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
 
-.menu__link:hover {
-  opacity: 1;
+.gallery__link:hover .gallery__img {
+    transform: scale(1.03);
+    opacity: 0.92;
 }
 
-.footer p {
-  color: #fff;
-  margin: 15px 0 10px 0;
-  font-size: 1rem;
-  font-weight: 300;
+@media (min-width: 600px) {
+    .gallery__grid { columns: 2; }
 }
 
-.wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  /* Change this to the color I want simple photoshop */
-  background: url(../Media/wave_green.png);
-  background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
-}
-
-.wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animate 4s linear infinite !important;
-}
-
-.wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWaves 12s linear infinite;
-}
-
-.wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animate 12s linear infinite;
-}
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-@keyframes animate {
-  0% {
-    background-position-x: -1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-    /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-@media only screen and (max-width: 500px){
-    .content-time{
-      font-size: 12px;
-      padding:8px 10px;
+@media (min-width: 1024px) {
+    .gallery__grid {
+        columns: 3;
+        column-gap: var(--space-m);
     }
 
-    .category{
-      font-size: 12px;
-      padding:8px 10px;
-    }
+    .gallery__item { margin-bottom: var(--space-m); }
+}
 
-    .blog-content a{
-      font-size: 12px;
-      padding:8px 10px;
-    }
-    .title{
-      font-size: 30px;
-      padding-top: 1rem;
-    }
-
-    nav ul li{
-      padding: 15px 15px;
-    }
-
-    nav ul li a{
-      font-size: 20px;
-    }
-
-    .footer p{
-      font-size: 0.8rem
-    }
-
-    .camera{
-      font-size: 22px;
-      margin-bottom: 20px;
-      padding: 0px 20px;
-    }
-
-    .dates{
-      font-size: 22px;
-      
-    }
-
-    .date-text{
-      display: flex;
-      flex-direction: column;
-    }
-
-    .labels{
-      font-size: 28px;
-      padding: 25px 10px;
-      margin: 0px 0px;
-    }
-
-    .row{
-      padding: 0px 10px;
-    }
-
-    .column img{
-      margin-bottom: 10px;
-    }
+@media (min-width: 1440px) {
+    .gallery__grid { columns: 4; }
 }

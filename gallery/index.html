@@ -1,185 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Photo Gallery</title>
-        <link rel="shortcut icon" type="image/png" href="../Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="../CSS/gallery.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://kit.fontawesome.com/3e341576aa.js" crossorigin="anonymous"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery | Ben Paquette</title>
+    <meta name="description" content="Photography by Ben Paquette, shot on a Canon EOS Rebel SL2.">
+    <meta name="theme-color" content="#242424">
+    <link rel="icon" type="image/png" href="/Media/favicon.png">
 
-  <body>
-      <!---------Page Headers-------->
-    <div class="title">
-      <h1>Photo Gallery</h1>
-    </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/base.css">
+    <link rel="stylesheet" href="/CSS/gallery.css">
+    <script src="/JS/site.js"></script>
+</head>
 
-    <div class="line-break"></div>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="header">
-      <div class="container-header">
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/itcareer">IT Career</a></li>
-            <li><a href="/techblog">Tech Blog</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-            <li><a href="/projects">Projects</a></li>
-          </ul>
+    <!-- ========== Site header (shared) ========== -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="/">
+                <span class="site-brand__mark" aria-hidden="true">BP</span>
+                Ben Paquette
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="/">Home</a></li>
+                    <li><a class="site-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="site-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="site-nav__link" href="/gallery/" aria-current="page">Gallery</a></li>
+                    <li><a class="site-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <header class="page-header container">
+            <h1 class="page-header__title">Photo Gallery</h1>
+            <p class="page-header__lead">Pictures are shot with a <span class="accent">Canon EOS Rebel SL2</span> using a <span class="accent">Canon EF-S 18&ndash;55mm lens</span>.</p>
+        </header>
+
+        <nav class="container gallery-periods" aria-label="Photo collections">
+            <ul class="gallery-periods__list" role="list">
+                <li><a class="gallery-periods__link" href="#jul-dec-2024">July to December 2024</a></li>
+                <li><span class="gallery-periods__link gallery-periods__link--soon">January to June 2025 <span class="gallery-periods__note">Coming soon</span></span></li>
+                <li><span class="gallery-periods__link gallery-periods__link--soon">July to December 2025 <span class="gallery-periods__note">Coming soon</span></span></li>
+                <li><span class="gallery-periods__link gallery-periods__link--soon">January to June 2026 <span class="gallery-periods__note">Coming soon</span></span></li>
+            </ul>
         </nav>
-      </div>
-    </div>
 
-    <div class="header-text">
-      <p class="camera">Pictures are shot with a <span>Cannon EOS Rebel SL2</span> using a <span>Cannon EFS 18mm-55mm lens</span></p>
-      <hr>
-    </div>
-
-  <div class="quicklinks">
-    <div class="container">
-      <nav class="quicklinks">
-        <ul class="sidemenu">
-          <li class="date-text"><a class="dates" href="#July to December 2024">July to December 2024</a></li>
-          <li class="date-text"><a class="dates" href="#">January to June 2025</a></li>
-          <li class="date-text"><a class="dates" href="#">July to December 2025</a></li>
-          <li class="date-text"><a class="dates" href="#">January to June 2026</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <hr>
-<!-----------------If you're reading this please dont steal my pictures!------------------->
-<!-----------------Photos------------------->
-<div id="July to December 2024">
-  <div class="photocontainer">
-    <div class="labels">
-      <p>July to December 2024</p>
-    </div>
-    <div class="row"> 
-      <div class="column">
-        <title>Photo Gallery</title>
-        <a target="_blank" href="../images/1.png">
-          <img src="../CSS/images/JPG/1.jpg">
-        </a>
-        <a target="_blank" href="../images/2.png">
-          <img src="../CSS/images/JPG/2.jpg">
-        </a>
-        <a target="_blank" href="../images/3.png">
-          <img src="../CSS/images/JPG/3.jpg">
-        </a>
-        <a target="_blank" href="../images/4.png">
-          <img src="../CSS/images/JPG/4.jpg">
-        </a>
-        <!-- <a target="_blank" href="../CSS/images/PNG/1.png">
-          <img src="../CSS/images/JPG/1.jpg"> -->
-        </a>
-        <a target="_blank" href="../images/17.png">
-          <img src="../CSS/images/JPG/17.jpg">
-        </a>
-        <a target="_blank" href="../images/16.png">
-          <img src="../CSS/images/JPG/16.jpg">
-        </a>
-        <a target="_blank" href="../images/21.png">
-          <img src="../CSS/images/JPG/21.jpg">
-        </a>
-        <a target="_blank" href="../images/22.jpg">
-          <img src="../CSS/images/JPG/22.jpg">
-        </a>
-        <a target="_blank" href="../images/26.png">
-          <img src="../CSS/images/JPG/26.jpg">
-        </a>
-      </div>
-      <div class="column">
-        <a target="_blank" href="../images/6.png">
-          <img src="../CSS/images/JPG/6.jpg">
-        </a>
-        <a target="_blank" href="../images/7.png">
-          <img src="../CSS/images/JPG/7.jpg">
-        </a>
-        <a target="_blank" href="../images/8.png">
-          <img src="../CSS/images/JPG/8.jpg">
-        </a>
-        <a target="_blank" href="../images/9.png">
-          <img src="../CSS/images/JPG/9.jpg">
-        </a>
-        <a target="_blank" href="../images/10.png">
-          <img src="../CSS/images/JPG/10.jpg">
-        </a>
-        <a target="_blank" href="../images/18.png">
-          <img src="../CSS/images/JPG/18.jpg">
-        </a>
-        <a target="_blank" href="../images/19.png">
-          <img src="../CSS/images/JPG/19.jpg">
-        </a>
-        <a target="_blank" href="../images/23.jpg">
-          <img src="../CSS/images/JPG/23.jpg">
-        </a>
-        <a target="_blank" href="../images/24.png">
-          <img src="../CSS/images/JPG/24.jpg">
-        </a>
-    </div>
-      <div class="column">
-        <a target="_blank" href="../images/11.png">
-          <img src="../CSS/images/JPG/11.jpg">
-        </a>
-        <a target="_blank" href="../images/12.png">
-          <img src="../CSS/images/JPG/12.jpg">
-        </a>
-        <a target="_blank" href="../images/13.png">
-          <img src="../CSS/images/JPG/13.jpg">
-        </a>
-        <a target="_blank" href="../images/14.png">
-          <img src="../CSS/images/JPG/14.jpg">
-        </a>
-        <a target="_blank" href="../images/15.png">
-          <img src="../CSS/images/JPG/15.jpg">
-        </a>
-        <a target="_blank" href="../images/20.png">
-          <img src="../CSS/images/JPG/20.jpg">
-        </a>
-        <a target="_blank" href="../images/25.png">
-          <img src="../CSS/images/JPG/25.jpg">
-        </a>
-        <a target="_blank" href="../images/27.jpg">
-          <img src="../CSS/images/JPG/27.jpg">
-        </a>
-      </div>
-
-<div class="spacer"></div>
-
-<!---------- Footer ------------>
-
-<footer class="footer">
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
+        <!-- If you're reading this please don't steal my pictures! -->
+        <section class="section section--tight gallery" id="jul-dec-2024" aria-labelledby="jul-dec-2024-title">
+            <div class="container container--wide">
+                <h2 class="section-title gallery__title" id="jul-dec-2024-title">July to December 2024</h2>
+                <ul class="gallery__grid" role="list">
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/1.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/1.jpg" alt="Live oaks draped in Spanish moss reflected in a still lagoon" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/2.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/2.jpg" alt="Stainless-steel sculpture of a figure beneath a tall column of stacked heads, in a brick-paved garden circle" width="4020" height="6024" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/3.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/3.jpg" alt="Tall dark bronze sculpture rising from a lagoon covered in green duckweed" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/4.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/4.jpg" alt="Bronze figure with an outstretched arm on a circular lawn under mossy oaks" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/17.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/17.jpg" alt="Curved metal facade of the New Orleans Museum of Art" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/16.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/16.jpg" alt="Stone head sculpture with a carved face standing on a lawn" width="3754" height="5625" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/21.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/21.jpg" alt="Artwork of crossed legs in boots and patterned stockings, lit by a band of light on a dark table" width="4426" height="2953" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/22.jpg" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/images/22.jpg" alt="Airport runway seen through a tall terminal window" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/26.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/26.jpg" alt="Neon sign glowing above a dark stage lined with coloured lights" width="2623" height="3554" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/6.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/6.jpg" alt="Seated figure sculpture made of steel letters on a lawn" width="5592" height="3968" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/7.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/7.jpg" alt="Close-up of the seated steel-letter figure sculpture against dark trees" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/8.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/8.jpg" alt="Three large lidded urns in pink, yellow and white under an oak tree" width="4020" height="6024" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/9.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/9.jpg" alt="Shady lawn beneath oaks hung with Spanish moss" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/10.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/10.jpg" alt="Tall zig-zag metal lattice sculpture rising above a lagoon" width="4020" height="6024" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/18.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/18.jpg" alt="Entrance wall of the Sydney and Walda Besthoff Sculpture Garden at the New Orleans Museum of Art" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/19.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/19.jpg" alt="Gold statue of an archer on a tall pedestal among pine trees" width="3446" height="5163" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/23.jpg" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/images/23.jpg" alt="Laundromat storefront lit up at night, reflected in a wet parking lot" width="4781" height="3860" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/24.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/24.jpg" alt="Small chihuahua wrapped in a white towel after a bath" width="3627" height="5436" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/11.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/11.jpg" alt="White diving-board sculpture with two figures on the platform, beside a lagoon" width="4020" height="6024" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/12.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/12.jpg" alt="Low-angle view of the white diving-board sculpture and its two figures" width="4020" height="6024" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/13.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/13.jpg" alt="The white diving-board sculpture against a blue sky at the edge of the lagoon" width="4020" height="6024" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/14.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/14.jpg" alt="Dark bronze seated figure in ribbed robes on a granite plinth" width="3911" height="5860" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/15.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/15.jpg" alt="Large gold ring sculpture framing a lagoon and trees" width="6024" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/20.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/20.jpg" alt="Cafe Du Monde sign above a red-tiled roof in New Orleans" width="5706" height="3933" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/25.png" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/CSS/images/JPG/25.jpg" alt="Chihuahua in a pink harness sitting on a Snoopy blanket" width="3256" height="4560" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="/images/27.jpg" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="/images/27.jpg" alt="Metal railing at the top of concrete steps leading into choppy water" width="5757" height="4020" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <ul class="social-icon">
-            <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
+        </section>
+    </main>
+
+    <!-- ========== Site footer (shared) ========== -->
+    <footer class="site-footer">
+        <div class="site-footer__waves" aria-hidden="true">
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+        </div>
+        <div class="container site-footer__inner">
+            <ul class="social-links">
+                <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
             </ul>
-
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-            </ul>
-
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-
-        </footer>
-    </body>
+            <nav aria-label="Footer">
+                <ul class="footer-nav__list">
+                    <li><a class="footer-nav__link" href="/">Home</a></li>
+                    <li><a class="footer-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="footer-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="footer-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="footer-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+            <p class="site-footer__copy">&copy; <span data-current-year>2025</span> Benjamin Paquette. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

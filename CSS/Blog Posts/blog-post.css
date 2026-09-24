@@ -1,362 +1,202 @@
-/* Document CSS */
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
-html{
-    scroll-behavior: smooth;
-}
-body{
-    background: #242424;
-    color: #EBF2EB;
+/* blog-post.css — individual tech blog posts only. Loaded after base.css. Mobile-first.
+   Markup: see Blog/post-template.html. Body text spacing comes from .prose in base.css. */
+
+/* ---------- Post header ---------- */
+.post__header {
+    padding-bottom: var(--space-l);
 }
 
-/*-------------- Header -------------*/
-.title{
-    text-align: center;
-    color: #FFF;
-    font-size: 40px;
-    margin:30px 20px;
-}
-
-.line-break{
-    background-color: #02B875;
-    padding: 2px 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.line-break-post{
-    background-color: #02B875;
-    padding: 2px 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 30px;
-}
-
-.header{
-    width: 100%;
-    padding: 10px 10px 
-}
-.container{
-    padding: 10px 10%;
-}
-.container-header{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 10px 10px;
-}
-nav{
-    display: flex;
+.post__back {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-nav ul li{
-    display: inline-block;
-    text-align: center;
-    list-style: none;
-    padding: 40px 40px;
-}
-nav ul li a{
-    color: #ffffff;
+    gap: var(--space-2xs);
     text-decoration: none;
-    font-size: 40px;
-    position: relative;
-    
 }
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #02B875;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
+
+.post__back:hover {
+    text-decoration: underline;
 }
-nav ul li a:hover::after{
+
+.post__title {
+    font-size: var(--step-4);
+}
+
+.post__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2xs) var(--space-s);
+    margin-top: var(--space-m);
+    color: var(--color-text-muted);
+    font-size: var(--step--1);
+}
+
+.post__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3xs);
+}
+
+.post__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3xs) var(--space-xs);
+    margin-top: var(--space-xs);
+    color: var(--color-accent);
+    font-size: var(--step--1);
+    font-weight: 500;
+}
+
+/* ---------- Post body ---------- */
+.post__body {
+    margin-inline: auto;
+    overflow-wrap: break-word;
+}
+
+/* On tablets and up the text sits on a panel, as on the original design */
+@media (min-width: 600px) {
+    .post__body {
+        max-width: none;
+        padding: var(--space-l) clamp(var(--space-m), 4vw, var(--space-xl));
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-m);
+        box-shadow: var(--shadow-card);
+    }
+}
+
+.post__body a {
+    overflow-wrap: anywhere;     /* long URLs wrap instead of widening the page */
+}
+
+.post__image {
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.post__image-link {
+    display: block;
+    border-radius: var(--radius-m);
+}
+
+.post__image-link:hover .post__image {
+    border-color: var(--color-accent);
+}
+
+.post__signoff {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Code, tables and embeds scroll or scale inside their own box */
+.post__body pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: var(--space-s);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-s);
+    background: var(--color-bg-alt);
+    font-size: var(--step--1);
+    line-height: 1.6;
+}
+
+.post__body pre code {
+    padding: 0;
+    background: none;
+    font-size: inherit;
+}
+
+.post__table {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.post__table table {
     width: 100%;
+    border-collapse: collapse;
+    font-size: var(--step--1);
 }
 
-/* Blog Post Section */
-
-.post-meta{
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-.post-title{
-    text-align: center;
-    font-size: 45px;
-    color: #02B875;
-}
-.post-content{
-    margin-left: 19%;
-    margin-right: 19%;
-    font-size: 20px;
+.post__table th,
+.post__table td {
+    padding: var(--space-2xs) var(--space-xs);
+    border-bottom: 1px solid var(--color-border);
     text-align: left;
-    line-height: 35px;
-    background: #3a3a3a;
-    padding: 30px 30px;
-    border-radius: 10px;
 }
 
-/* Previous/Next Buttons */
-
-.transition{
-  margin: 30px 20px;
-  font-size: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
-  margin-left: 19%;
-  margin-right: 19%;
+.post__table th {
+    color: var(--color-heading);
 }
 
-.previous {
-  background-color: #02B875;
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 7px;
+.post__embed {
+    aspect-ratio: 16 / 9;
 }
 
-.next {
-  background-color: #02B875;
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 7px;
+.post__embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: var(--radius-m);
 }
 
-.blog-pictures{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  border: 3px solid white;
+/* ---------- Previous / next ---------- */
+.post-nav {
+    display: grid;
+    gap: var(--space-s);
+    margin-top: var(--space-xl);
 }
 
-
-
-/* ----------------- Footer---------------------- */
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-
-.footer {
-  position: relative;
-  width: 100%;
-  background: #02B875;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 135px;
+.post-nav__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+    padding: var(--space-s) var(--space-m);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: border-color var(--dur-fast) var(--ease), transform var(--dur) var(--ease);
 }
 
-.social-icon,
-.menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
+.post-nav__link:hover {
+    border-color: var(--color-accent);
+    color: var(--color-heading);
+    transform: translateY(-2px);
 }
 
-.social-icon__item,
-.menu__item {
-  list-style: none;
+.post-nav__label {
+    color: var(--color-accent);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
-.social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 20px;
-  display: inline-block;
-  transition: 0.5s;
-}
-.social-icon__link:hover {
-  transform: translateY(-10px);
+.post-nav__title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: var(--leading-snug);
+    overflow-wrap: break-word;
 }
 
-.menu__link {
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
+.post-nav__link--next {
+    text-align: right;
 }
 
-.menu__link:hover {
-  opacity: 1;
+.post-nav__all {
+    justify-self: center;
+    margin-top: var(--space-2xs);
 }
 
-.footer p {
-  color: #fff;
-  margin: 15px 0 10px 0;
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  
-  /* Change this to the color I want simple photoshop */
-  background: url(/Media/wave_green.png);
-  background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
-}
-
-.wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animate 4s linear infinite !important;
-}
-
-.wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWaves 12s linear infinite;
-}
-
-.wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animate 12s linear infinite;
-}
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-@keyframes animate {
-  0% {
-    background-position-x: -1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-
-/* Screen Size Adjustments */
-
-
-@media screen and (max-width: 900px){
-    nav ul li a {
-        font-size: 26px;
+@media (min-width: 600px) {
+    .post-nav {
+        grid-template-columns: 1fr 1fr;
     }
 
-    nav ul li{
-        padding: 20px 20px;
-    }
-
-    .title{
-      font-size: 32px;
-    }
-
-    .post-content{
-      margin-left: 15px;
-      margin-right: 15px;
-    }
+    .post-nav__link--prev { grid-column: 1; }
+    .post-nav__link--next { grid-column: 2; }
+    .post-nav__all { grid-column: 1 / -1; }
 }
-
-@media only screen and (max-width: 500px){
-    .content-time{
-      font-size: 12px;
-      padding:8px 10px;
-    }
-
-    .category{
-      font-size: 12px;
-      padding:8px 10px;
-    }
-
-    .blog-content a{
-      font-size: 12px;
-      padding:8px 10px;
-    }
-    .title{
-      font-size: 30px;
-      padding-top: 1rem;
-    }
-
-    nav ul li{
-      padding: 15px 15px;
-    }
-
-    nav ul li a{
-      font-size: 20px;
-    }
-
-    .footer p{
-      font-size: 0.8rem
-    }
-
-    .post-title{
-      font-size: 28px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .post-meta{
-      font-size: 16px;
-    }
-
-    .post-content{
-      font-size: 16px;
-      padding-left: 15px;
-      padding-right: 15px;
-      margin-left: 25px;
-      margin-right: 25px;
-    }
-
-    .post-content p{
-      padding-bottom: 10px;
-    }
-
-    .transition {
-      font-size: 18px;
-      margin-left: 10%;
-      margin-right: 11%;
-    }
-
-    .blog-pictures{
-      width: 90%;
-    }
-
-}
-
-

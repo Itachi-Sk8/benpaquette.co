@@ -1,117 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Blog Posts</title>
-        <link rel="shortcut icon" type="image/png" href="/Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="/CSS/Blog Posts/blog-post.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tech Resource Guide: Grey Hack | Ben Paquette</title>
+    <meta name="description" content="A tech resource guide to Grey Hack, the multiplayer hacking simulator on Steam, and why Ben Paquette recommends it to anyone interested in IT or cybersecurity.">
+    <meta name="theme-color" content="#242424">
+    <link rel="icon" type="image/png" href="/Media/favicon.png">
 
-    <body>
-        <div class="title">
-            <h1>Tech Blog</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/base.css">
+    <link rel="stylesheet" href="/CSS/Blog%20Posts/blog-post.css">
+    <script src="/JS/site.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========== Site header (shared) ========== -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="/">
+                <span class="site-brand__mark" aria-hidden="true">BP</span>
+                Ben Paquette
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="/">Home</a></li>
+                    <li><a class="site-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="site-nav__link" href="/techblog/" aria-current="page">Tech Blog</a></li>
+                    <li><a class="site-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="site-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="line-break"></div>
+    <main id="main">
+        <article class="post">
+            <header class="page-header container container--narrow post__header">
+                <a class="page-header__eyebrow post__back" href="/techblog/"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Tech Blog</a>
+                <h1 class="page-header__title post__title">Tech Resource Guide:<br>Grey Hack</h1>
+                <div class="post__meta">
+                    <time class="post__meta-item" datetime="2025-02-10"><i class="fa-regular fa-calendar" aria-hidden="true"></i> February 10th, 2025</time>
+                    <span class="tag tag--warning">Resources</span>
+                    <span class="post__meta-item"><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 Minute Read</span>
+                </div>
+                <ul class="post__tags" role="list" aria-label="Topics">
+                    <li>#Cybersecurity</li>
+                    <li>#Steam</li>
+                    <li>#Resources</li>
+                </ul>
+            </header>
 
-        <div class="header">
-            <div class="container-header">
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
+            <div class="container container--narrow">
+                <div class="post__body post-content prose">
+                    <img class="post__image" src="/CSS/images/grey-hack-2.jpg" alt="Grey Hack logo: a fedora above the words Grey Hack" width="329" height="153">
+                    <p>I was fortunate to discover Grey Hack in early 2024 thanks to the popular streamer Pirate Software, who showcased it during one of his streams. This game marked a major step forward in my interest in cybersecurity. My appreciation for Grey Hack is immense, due to the wide variety of features and learning opportunities it offers. Personally, I’ve returned to this game at different points throughout my IT career, and my understanding of it has grown in tandem with my studies and professional projects.</p>
+                    <p>The goal of this post is to share what Grey Hack is all about and explain why I believe anyone working in IT—or looking to pursue a career in cybersecurity—should absolutely give this game a try.</p>
+                    <img class="post__image" src="/CSS/images/grey-hack-1.jpg" alt="Grey Hack desktop with terminal windows showing an SSH session and a port scan, next to the appearance settings" width="1920" height="1080" loading="lazy">
+                    <p>Grey Hack is developed and published by Loading Home, a small indie studio that originally focused on mobile games. You can find it on Steam for $20, though it frequently goes on sale for 20% off ($15.99). Given the game’s depth, quality, and the dedication of its developer, it genuinely surprises me that it only averages around 40 active players a day. I truly believe Grey Hack is a hidden gem that deserves much more recognition.</p>
+                    <p>One of the game’s standout features is the ability to play either in single-player or multiplayer mode. In single-player, you operate in a virtual environment with only AI-controlled systems. Multiplayer, on the other hand, places you in a shared network with other real players, creating a dynamic PvPvE experience. The tutorial mission is incredibly helpful, and the in-game Help section is full of detailed, step-by-step guides for using the game’s tools. Additionally, the community has created a very in-depth guide for progressing through missions and learning the mechanics.</p>
+                    <a class="post__image-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308" target="_blank" rel="noopener"><img class="post__image" src="/CSS/images/grey-hack-4.jpg" alt="Hacker's Handbook (Hacking Guide for v0.8), a Steam community guide for Grey Hack (opens in a new tab)" width="962" height="298" loading="lazy"></a>
+                    <p>For me, the chance to practice real-world tools I’ve been learning about has been invaluable. Activities like performing Nmap scans, executing man-in-the-middle attacks, and navigating local networks to gain privileges mirror many real-life cybersecurity scenarios. While the game simplifies some aspects—especially the scripting side—the logic and troubleshooting involved are impressively realistic. A core element of the game is the Hack Shop, an in-game server where you can buy hacking tools using in-game currency. If you prefer building everything from scratch, you also have the option to write your own scripts to perform similar functions.</p>
+                    <img class="post__image" src="/CSS/images/grey-hack-3.jpg" alt="Grey Hack code editor with an Nmap script beside a ScanLan network map of routers, servers and cameras" width="1920" height="1080" loading="lazy">
+                    <p>Another major selling point is the freedom to choose your path. You can play as a black hat, stealthily avoiding detection, or take a white-hat approach by hunting down malicious actors. Personally, I’ve logged only 17 hours in the game so far, and I already feel like I’ve only scratched the surface. From hacking security cameras and creating your own cryptocurrency to hosting your own in-game server, the possibilities feel nearly endless.</p>
+                    <p>Grey Hack covers a wide range of cybersecurity and foundational IT skills and principles. I cannot recommend it highly enough to anyone with an interest in IT or cybersecurity. If you want to see the game in action, I suggest checking out playthroughs by <a href="https://www.youtube.com/watch?v=bXjZXLOdB4M" target="_blank" rel="noopener">Pirate Software</a> or <a href="https://www.youtube.com/watch?v=bXjZXLOdB4M" target="_blank" rel="noopener">InsideAgameR</a>. There are also many YouTubers who provide thorough guides and walkthroughs to help if you get stuck.</p>
+                    <p class="post__signoff">~ Ben Paquette</p>
+                </div>
+
+                <nav class="post-nav" aria-label="More posts">
+                    <a class="post-nav__link post-nav__link--prev" href="/techblog/6-months-in-helpdesk/" rel="prev">
+                        <span class="post-nav__label">&laquo; Previous</span>
+                        <span class="post-nav__title">6 Months in Helpdesk</span>
+                    </a>
+                    <a class="post-nav__link post-nav__link--next" href="/techblog/hdi-support-center-analyst-training/" rel="next">
+                        <span class="post-nav__label">Next &raquo;</span>
+                        <span class="post-nav__title">HDI - Support Center Analyst Training</span>
+                    </a>
+                    <a class="btn btn--outline btn--small post-nav__all" href="/techblog/">All posts</a>
                 </nav>
             </div>
+        </article>
+    </main>
+
+    <!-- ========== Site footer (shared) ========== -->
+    <footer class="site-footer">
+        <div class="site-footer__waves" aria-hidden="true">
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
         </div>
-
-        <main>
-            <article class="blog-post">
-                <header class="blog-header">
-                    <h3 class="post-title">Tech Resource Guide:<br>Grey Hack</h3>
-                    <div class="post-meta">
-                        <br>
-                        <span class="post-date">February 10th, 2025</span>
-                        <br>
-                        <br>
-                        <span class="post-tags">#Cybersecurity #Steam #Resources</span>
-                        <br>
-                    </div>
-                </header>
-
-                <div class="post-content">
-                    <img class="blog-pictures" src="/CSS/images/grey-hack-2.jpg">
-                    <p>I was fortunate to discover Grey Hack in early 2024 thanks to the popular streamer Pirate Software, who showcased it during one of his streams. This game marked a major step forward in my interest in cybersecurity. My appreciation for Grey Hack is immense, due to the wide variety of features and learning opportunities it offers. Personally, I’ve returned to this game at different points throughout my IT career, and my understanding of it has grown in tandem with my studies and professional projects.
-                    </p>
-                    <br>
-                    <p>The goal of this post is to share what Grey Hack is all about and explain why I believe anyone working in IT—or looking to pursue a career in cybersecurity—should absolutely give this game a try.
-                    </p>
-                    <img class="blog-pictures" src="/CSS/images/grey-hack-1.jpg" style="width: 85%">
-                    <br>
-                    <p>Grey Hack is developed and published by Loading Home, a small indie studio that originally focused on mobile games. You can find it on Steam for $20, though it frequently goes on sale for 20% off ($15.99). Given the game’s depth, quality, and the dedication of its developer, it genuinely surprises me that it only averages around 40 active players a day. I truly believe Grey Hack is a hidden gem that deserves much more recognition.
-                    </p>
-                    <br>
-                    <p>One of the game’s standout features is the ability to play either in single-player or multiplayer mode. In single-player, you operate in a virtual environment with only AI-controlled systems. Multiplayer, on the other hand, places you in a shared network with other real players, creating a dynamic PvPvE experience. The tutorial mission is incredibly helpful, and the in-game Help section is full of detailed, step-by-step guides for using the game’s tools. Additionally, the community has created a very in-depth guide for progressing through missions and learning the mechanics.
-                    </p>
-                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308" target="_blank"><img class="greyhack" src="/CSS/images/grey-hack-4.jpg" style="width: 100%; height: auto;"></a>
-                    <br>
-                    <p>For me, the chance to practice real-world tools I’ve been learning about has been invaluable. Activities like performing Nmap scans, executing man-in-the-middle attacks, and navigating local networks to gain privileges mirror many real-life cybersecurity scenarios. While the game simplifies some aspects—especially the scripting side—the logic and troubleshooting involved are impressively realistic. A core element of the game is the Hack Shop, an in-game server where you can buy hacking tools using in-game currency. If you prefer building everything from scratch, you also have the option to write your own scripts to perform similar functions.
-                    </p>
-                    <img class="blog-pictures" src="/CSS/images/grey-hack-3.jpg" style="width: 85%;">
-                    <br>
-                    <p>Another major selling point is the freedom to choose your path. You can play as a black hat, stealthily avoiding detection, or take a white-hat approach by hunting down malicious actors. Personally, I’ve logged only 17 hours in the game so far, and I already feel like I’ve only scratched the surface. From hacking security cameras and creating your own cryptocurrency to hosting your own in-game server, the possibilities feel nearly endless.
-                    </p>
-                    <br>
-                    <p>Grey Hack covers a wide range of cybersecurity and foundational IT skills and principles. I cannot recommend it highly enough to anyone with an interest in IT or cybersecurity. If you want to see the game in action, I suggest checking out playthroughs by <a href="https://www.youtube.com/watch?v=bXjZXLOdB4M" target="_blank" style="color:#02B875 ; text-decoration: none;">Pirate Software</a> or <a href="https://www.youtube.com/watch?v=bXjZXLOdB4M" target="_blank" style="color:#02B875 ; text-decoration: none;">InsideAgameR</a>. There are also many YouTubers who provide thorough guides and walkthroughs to help if you get stuck.
-                    </p>
-                    <br>
-                    <p> ~ Ben Paquette</p>
-                </div>
-            </article>
-            <div class="transition">
-                <a href="/techblog/6-months-in-helpdesk/" class="previous"> &laquo; Previous</a>
-                <a href="/techblog/hdi-support-center-analyst-training/" class="next">Next &raquo;</a>
-            </div>
-        </main>
-
-        <!---------- Footer ------------>
-        <footer class="footer">
-            <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social-icon">
-              <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
+        <div class="container site-footer__inner">
+            <ul class="social-links">
+                <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
             </ul>
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-        
-            </ul>
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-          </footer>
-          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    </body>
-    
+            <nav aria-label="Footer">
+                <ul class="footer-nav__list">
+                    <li><a class="footer-nav__link" href="/">Home</a></li>
+                    <li><a class="footer-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="footer-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="footer-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="footer-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+            <p class="site-footer__copy">&copy; <span data-current-year>2025</span> Benjamin Paquette. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

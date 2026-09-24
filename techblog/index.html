@@ -1,170 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Blog Posts</title>
-        <link rel="shortcut icon" type="image/png" href="../Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="../CSS/blog.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tech Blog | Ben Paquette</title>
+    <meta name="description" content="Ben Paquette's tech blog: breaking into IT, life on the helpdesk, certifications and resources that helped along the way.">
+    <meta name="theme-color" content="#242424">
+    <link rel="icon" type="image/png" href="/Media/favicon.png">
 
-    <body>
-        <div class="title">
-            <h1>Breaking into IT</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/base.css">
+    <link rel="stylesheet" href="/CSS/blog.css">
+    <script src="/JS/site.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========== Site header (shared) ========== -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="/">
+                <span class="site-brand__mark" aria-hidden="true">BP</span>
+                Ben Paquette
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="/">Home</a></li>
+                    <li><a class="site-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="site-nav__link" href="/techblog/" aria-current="page">Tech Blog</a></li>
+                    <li><a class="site-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="site-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="line-break"></div>
+    <main id="main">
+        <header class="page-header container">
+            <span class="page-header__eyebrow">Tech Blog</span>
+            <h1 class="page-header__title">Breaking into IT</h1>
+        </header>
 
-        <div class="header">
-            <div class="container-header">
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
-                </nav>
+        <section class="section section--tight blog-list" aria-label="Blog posts">
+            <div class="container">
+                <ul class="grid blog-list__grid" role="list">
+                    <li class="card card--link blog-card">
+                        <div class="card__media">
+                            <img src="/CSS/images/blog-post-1.jpg" alt="Laptop, coffee mug, notepad and phone on a wooden desk" width="6000" height="4000" loading="lazy">
+                        </div>
+                        <div class="card__body">
+                            <time class="blog-card__date" datetime="2024-05-12">May 12th, 2024</time>
+                            <h2 class="card__title"><a class="card__link" href="/techblog/clinical-trials-coordinator-to-the-world-of-information-technology/">Clinical Trials Coordinator to the World of Information Technology</a></h2>
+                            <p class="card__text">This is a glimpse into my journey from working at LSU as a Clinical Trials Coordinator on an NIH R1 grant-funded project to beginning a new career in IT at the University of Georgia.</p>
+                            <div class="card__footer">
+                                <span class="tag">Personal</span>
+                                <span class="blog-card__read"><i class="fa-regular fa-clock" aria-hidden="true"></i> 4.5 Minute Read</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card card--link blog-card">
+                        <div class="card__media">
+                            <img src="/CSS/images/blog-post-2.jpg" alt="Large purple and gold LSU banner on a hallway wall" width="2750" height="1659" loading="lazy">
+                        </div>
+                        <div class="card__body">
+                            <time class="blog-card__date" datetime="2024-07-26">July 26th, 2024</time>
+                            <h2 class="card__title"><a class="card__link" href="/techblog/the-journey-to-the-helpdesk/">The Journey to the Helpdesk</a></h2>
+                            <p class="card__text">From applying to 30 jobs, to the sad reality of getting your foot in the door. Never counting yourself out and having faith that your hardwork will pay off.</p>
+                            <div class="card__footer">
+                                <span class="tag">Personal</span>
+                                <span class="blog-card__read"><i class="fa-regular fa-clock" aria-hidden="true"></i> 5.5 Minute Read</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card card--link blog-card">
+                        <div class="card__media">
+                            <img class="blog-card__img--top" src="/CSS/images/blog-post-3.JPG" alt="White sculpture of two boys on a diving board above a pond in a park" width="3417" height="3022" loading="lazy">
+                        </div>
+                        <div class="card__body">
+                            <time class="blog-card__date" datetime="2025-03-03">March 3rd, 2025</time>
+                            <h2 class="card__title"><a class="card__link" href="/techblog/6-months-in-helpdesk/">6 Months in Helpdesk</a></h2>
+                            <p class="card__text">Your first IT job can range from a variety of places: MSP, online call centers or in my case The University of Georgia. My first 6 months was not what I expected but the growth and outlook it gave me has steered me in a successful path.</p>
+                            <div class="card__footer">
+                                <span class="tag tag--danger">Career</span>
+                                <span class="blog-card__read"><i class="fa-regular fa-clock" aria-hidden="true"></i> 3.5 Minute Read</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card card--link blog-card">
+                        <div class="card__media">
+                            <img src="/CSS/images/grey-hack-3.jpg" alt="Grey Hack screenshot showing a code editor, terminal and network map" width="1920" height="1080" loading="lazy">
+                        </div>
+                        <div class="card__body">
+                            <time class="blog-card__date" datetime="2025-02-10">February 10th, 2025</time>
+                            <h2 class="card__title"><a class="card__link" href="/techblog/tech-resource-guide/grey-hack/">Tech Resource Guide: Grey Hack</a></h2>
+                            <p class="card__text">This Tech Resource guide will go over the Steam game <b>Grey Hack</b>, a massively multiplayer hacking simulator game. This game has been a huge step in my IT career and more specifcally my cybersecurity career.</p>
+                            <div class="card__footer">
+                                <span class="tag tag--warning">Resources</span>
+                                <span class="blog-card__read"><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 Minute Read</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card card--link blog-card">
+                        <div class="card__media">
+                            <img src="/CSS/images/Paquette_HDI_Certification.jpg" alt="Ben Paquette's HDI Support Center Analyst certificate of achievement" width="3508" height="2481" loading="lazy">
+                        </div>
+                        <div class="card__body">
+                            <time class="blog-card__date" datetime="2025-08-22">August 22nd, 2025</time>
+                            <h2 class="card__title"><a class="card__link" href="/techblog/hdi-support-center-analyst-training/">HDI - Support Center Analyst Training</a></h2>
+                            <p class="card__text">After passing my HDI - Support Center Analyst certification, I took some time to reflect on the class as a whole and the implications it will assist with in my day to day life.</p>
+                            <div class="card__footer">
+                                <span class="tag tag--danger">Career</span>
+                                <span class="blog-card__read"><i class="fa-regular fa-clock" aria-hidden="true"></i> 3.5 Minute Read</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Blog card template: copy one <li> above. Tag modifiers:
+                         Personal = .tag, Career = .tag--danger, Resources = .tag--warning -->
+                </ul>
             </div>
+        </section>
+    </main>
+
+    <!-- ========== Site footer (shared) ========== -->
+    <footer class="site-footer">
+        <div class="site-footer__waves" aria-hidden="true">
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
         </div>
-
-        <div class="line-break-post"></div>
-        
-        <div class="blog-section">
-            <!-- <h1>Latest Blog Posts</h1> -->
-            <div class="blog-cards">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/blog-post-1.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>Clinical Trials Coordinator to the World of Information Technology</h2>
-                        <p>This is a glimpse into my journey from working at LSU as a Clinical Trials Coordinator on an NIH R1 grant-funded project to beginning a new career in IT at the University of Georgia.</p>
-                        <div class="bottom-card">
-                            <h4 class="category">Personal</h4>
-                            <a href="/techblog/clinical-trials-coordinator-to-the-world-of-information-technology/">Read More</a>
-                            <h4 class="content-time">4.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/blog-post-2.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>The Journey to the Helpdesk</h2>
-                        <p>From applying to 30 jobs, to the sad reality of getting your foot in the door. Never counting yourself out and having faith that your hardwork will pay off.</p>
-                        <div class="bottom-card">
-                            <h4 class="category">Personal</h4>
-                            <a href="/techblog/the-journey-to-the-helpdesk/">Read More</a>
-                            <h4 class="content-time">5.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/blog-post-3.JPG">
-                    </div>
-                    <div class="blog-content">
-                        <h2>6 Months in Helpdesk</h2>
-                        <p>Your first IT job can range from a variety of places: MSP, online call centers or in my case The University of Georgia. My first 6 months was not what I expected but the growth and outlook it gave me has steered me in a successful path.  </p>
-                        <div class="bottom-card">
-                            <h4 class="category" style="color: rgb(226, 1, 1);">Career</h4>
-                            <a href="/techblog/6-months-in-helpdesk/">Read More</a>
-                            <h4 class="content-time" style="color: rgb(226, 1, 1);">3.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/grey-hack-3.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>Tech Resource Guide: Grey Hack</h2>
-                        <p>This Tech Resource guide will go over the Steam game <b>Grey Hack</b>, a massively multiplayer hacking simulator game. This game has been a huge step in my IT career and more specifcally my cybersecurity career.</p>
-                        <div class="bottom-card">                         
-                            <h4 class="category" style="color: yellow;">Resources</h4>
-                            <a class="readmore" href="/techblog/tech-resource-guide/grey-hack/">Read More</a>
-                            <h4 class="content-time" style="color: yellow;">5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/Paquette_HDI_Certification.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>HDI - Support Center Analyst Training</h2>
-                        <p>After passing my HDI - Support Center Analyst certification, I took some time to reflect on the class as a whole and the implications it will assist with in my day to day life.</p>
-                        <div class="bottom-card">
-                            <h4 class="category" style="color: rgb(226, 1, 1);">Career</h4>
-                            <a class="readmore" href="/techblog/hdi-support-center-analyst-training/">Read More</a>
-                            <h4 class="content-time" style="color: rgb(226, 1, 1);">3.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!------------------------------ Blog Card Template ------------------------>
-                <!-- <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/JPG/6.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>Title</h2>
-                        <p>Intro</p>
-                        <div class="bottom-card">
-                            <h4 class="category">Category</h4>
-                            <a class="readmore" href="/HTML/Blog Posts/post-2.html">Read More</a>
-                            <h4 class="content-time">Time to Read</h4>
-                        </div>
-                    </div>
-                </div> -->
-
-            </div>
-        </div>
-
-
-    <!---------- Footer ------------>
-        <footer class="footer">
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social-icon">
-                <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                    </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                    </a></li>
+        <div class="container site-footer__inner">
+            <ul class="social-links">
+                <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
             </ul>
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-            </ul>
-
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-
-        </footer>
-    </body>
-
-
-
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-
-
-
+            <nav aria-label="Footer">
+                <ul class="footer-nav__list">
+                    <li><a class="footer-nav__link" href="/">Home</a></li>
+                    <li><a class="footer-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="footer-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="footer-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="footer-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+            <p class="site-footer__copy">&copy; <span data-current-year>2025</span> Benjamin Paquette. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

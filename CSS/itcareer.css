@@ -1,497 +1,199 @@
-/*---------- General Page CSS----------*/
+/* itcareer.css — IT Career page only. Loaded after base.css. Mobile-first. */
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
-html{
-    scroll-behavior: smooth;
-}
-body{
-    background: #242424;
-    color: #EBF2EB;
+/* ---------- About ---------- */
+.about {
+    --split-cols: minmax(0, 2fr) minmax(0, 3fr);
+    align-items: start;
+    padding: var(--space-m);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-card);
 }
 
-/*-------------- Header Section -------------*/
-
-.title{
-    text-align: center;
-    color: #FFF;
-    font-size: 40px;
-    margin:30px 20px;
+.about__media {
+    justify-self: center;
+    width: min(100%, 18rem);
 }
 
-.line-break{
-    background-color: #02B875;
-    padding: 2px 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.header{
+.about__photo {
     width: 100%;
-    padding: 10px 10px 
-}
-.container{
-    padding: 10px 10%;
-}
-.container-header{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 10px 10px;
-}
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-nav ul li{
-    display: inline-block;
-    text-align: center;
-    list-style: none;
-    padding: 40px 40px;
-}
-nav ul li a{
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 40px;
-    position: relative;
-    
-}
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #02B875;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
-nav ul li a:hover::after{
-    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    border-radius: var(--radius-m);
+    box-shadow: 12px 12px 0 -4px var(--color-accent-soft);
 }
 
-/*----- End of Header Section ------*/
+.about__title {
+    font-size: var(--step-3);
+}
 
-/*----------------------- Body ---------------------*/
-.container{
-    padding: 10px 7%;
+.about__text {
+    margin-top: var(--space-s);
+    color: var(--color-text-muted);
+    max-width: 68ch;
 }
-p { 
-    font-size: 150%;
-    
-} 
-.about{
-    margin: 10px 30px;
-    padding: 30px 0px; 
-    border-radius: 30px;
-    border: 3px solid;
-    border-color: black;
-    color: #EBF2EB;
-    background-color: #464545;
+
+@media (min-width: 600px) {
+    .about { padding: var(--space-l); }
 }
-.row{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
+@media (min-width: 1024px) {
+    .about {
+        padding: var(--space-xl);
+        gap: var(--space-2xl);
+    }
+
+    .about__media {
+        width: 100%;
+        position: sticky;
+        top: calc(var(--header-h) + var(--space-l));
+    }
 }
-.about-col-1{
-    flex-basis: 35%;
+
+/* ---------- Tabs ---------- */
+.tabs {
+    margin-top: var(--space-l);
 }
-.about-col-1-pic{
-    width: 100%;
-    
-    border-radius: 15px;
-    border: 3px solid;
-    border-color: #02B875;
-    
+
+/* Phones: 2x2 segmented grid so four tabs never overflow at 320px */
+.tabs__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3xs);
+    padding: var(--space-3xs);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
 }
-.about-col-2{
-    flex-basis: 60%;
-}
-.sub-title{
-    font-size: 520%;
-    font-weight: 600;
-    color: #EBF2EB;
-}
-.sub-title-body{
-    line-height: 1.4;
-    margin-top: 8px;
-}
-.tab-titles{
-    display: flex;
-    margin: 20px 0 40px;
-}
-.tab-links{
-    margin-right: 50px;
-    font-size: 34px;
+
+.tabs__tab {
+    min-height: 2.75rem;
+    padding: var(--space-2xs) var(--space-s);
+    border-radius: var(--radius-s);
+    color: var(--color-text-muted);
+    font-family: var(--font-heading);
+    font-size: var(--step-0);
     font-weight: 500;
-    cursor: pointer;
-    position: relative;
-}
-.tab-links::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #02B875;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
-}
-.tab-links.active-link::after{
-    width: 50%;
-}
-.tab-contents ul li{
-    list-style: none;
-    margin: 10px 0;
-    font-size: 150%;
-}
-.tab-contents ul li span{
-    color:#02B875 ;
-    font-size: 100%;
-}
-.tab-contents{
-    display: none;
-}
-.tab-contents.active-tab{
-    display: block;
-}
-.btn{
-    display: block;
-    margin: 50px auto;
-    width: fit-content;
-    border: 1px solid #02B875;
-    padding:  4% 12% ;
-    border-radius: 16px;
-    text-decoration: none;
-    color: #EBF2EB;
-    background-color: #242424;
-}
-.btn:hover{
-    background: #02B875;
-}
-.btn.btn2{
-    display: inline-block;
-    color: #EBF2EB;
-    font-size: 150%;
+    white-space: nowrap;
+    transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 
-/* Skills Progress Bars */
-
-.container-progressbars{
-    padding: 30px 20px;
-    margin: 20px 20px;
-    margin-bottom: 50px;
+.tabs__tab:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-heading);
 }
 
-.container-progressbars p{
-    padding-bottom: 15px;
+.tabs__tab[aria-selected="true"] {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
 }
 
-.cert-title{
-        padding-bottom: 30px;
-    }
-
-.container-progress { 
-    background-color: rgb(192, 192, 192); 
-    width: 80%; 
-    border-radius: 15px; 
-    margin-bottom: 20px;
-} 
-
-.skill { 
-    background-color: #02B875; 
-    color: white; 
-    padding: 1%; 
-    text-align: right; 
-    font-size: 20px; 
-    border-radius: 15px; 
-} 
-
-.comptia { 
-    width: 60%; 
-} 
-
-.networking { 
-    width: 30%; 
-} 
-
-.security{
-    width: 95%;
-}
-.python{
-    width: 40%;
-}
-.container-progressbars{
-    padding-left: 10%;
-    padding-bottom: 10%;
-}
-.container-skillbars{
-    flex-basis: 60%;
-}
-
-#certandskills{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* ----------------- Footer---------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-
-.footer {
-  position: relative;
-  width: 100%;
-  background: #02B875;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.social-icon,
-.menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-.social-icon__item,
-.menu__item {
-  list-style: none;
-}
-
-.social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 20px;
-  display: inline-block;
-  transition: 0.5s;
-}
-.social-icon__link:hover {
-  transform: translateY(-10px);
-}
-
-.menu__link {
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
-}
-
-.menu__link:hover {
-  opacity: 1;
-}
-
-.footer p {
-  color: #fff;
-  margin: 15px 0 10px 0;
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  
-  /* Change this to the color I want simple photoshop */
-  background: url(../Media/wave_green.png);
-  background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
-}
-
-.wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animate 4s linear infinite !important;
-}
-
-.wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWaves 12s linear infinite;
-}
-
-.wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animate 12s linear infinite;
-}
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-@keyframes animate {
-  0% {
-    background-position-x: -1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-/* Screen Adjustments */
-
-@media screen and (max-width: 865px){
-    nav ul li a {
-        font-size: 36px;
-    }
-
-    .about-col-1{
-        flex-basis: 100%;
-    }
-}
-
-
-
-@media only screen and (max-width: 650px){
-    .content-time{
-      font-size: 12px;
-      padding:8px 10px;
-    }
-
-    .category{
-      font-size: 12px;
-      padding:8px 10px;
-    }
-
-    .blog-content a{
-      font-size: 12px;
-      padding:8px 10px;
-    }
-    .title{
-      font-size: 30px;
-      padding-top: 1rem;
-    }
-
-    nav ul li{
-      padding: 15px 15px;
-    }
-
-    nav ul li a{
-      font-size: 20px;
-    }
-
-    .footer p{
-      font-size: 0.8rem
-    }
-
-    .about{
-        margin: 0px 15px;
-        padding: 5px 0px;
-    }
-
-    .container{
-        padding: 10px 15px;
-    }
-
-    .row{
-        display: contents;
-    }
-    .about-col-1{
-        flex-basis: 100%;
-        
-    }
-
-    .sub-title{
-        font-size: 40px;
-        padding: 10px 0px;
-        
-    }
-
-    .about-col-2{
-        width: 100%;
-    }
-
-    .sub-title-body {
-        font-size: 18px;
-        
-    }
-    .sub-title-body p{
-        color: #02B875;
-    }
-
-    .tab-links{
-        font-size: 30px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
-
-    .tab-titles{
-        display: flex;
+@media (min-width: 480px) {
+    .tabs__list {
+        display: inline-flex;
         flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 0px;
+        border-radius: var(--radius-pill);
     }
 
-    .tab-contents ul li span{
-        font-size: 24px;
+    .tabs__tab { border-radius: var(--radius-pill); }
+}
+
+.tabs__panel {
+    margin-top: var(--space-m);
+}
+
+.tabs__panel:focus-visible {
+    outline-offset: 6px;
+    border-radius: var(--radius-s);
+}
+
+.tabs__panel[hidden] { display: none; }
+
+/* Before tabs.js runs, show only the first panel (no flash of all four) */
+.js .tabs:not(.is-enhanced) .tabs__list ~ .tabs__panel ~ .tabs__panel { display: none; }
+
+/* With JS the tab names label the panels; without it the panels show as a list with headings */
+.js .tabs__panel-title { display: none; }
+html:not(.js) .tabs__list { display: none; }
+
+.tabs__panel-title {
+    margin-bottom: var(--space-xs);
+    font-size: var(--step-1);
+}
+
+.career-list {
+    display: grid;
+    gap: var(--space-s);
+}
+
+.career-list__item {
+    padding-left: var(--space-s);
+    border-left: 3px solid var(--color-accent);
+    font-size: var(--step-0);
+    line-height: var(--leading-snug);
+}
+
+.career-list__label {
+    display: block;
+    margin-bottom: var(--space-3xs);
+    color: var(--color-accent);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 399.98px) {
+    .tabs__panel .btn { width: 100%; }
+}
+
+/* ---------- Certification progress ---------- */
+.progress-list {
+    display: grid;
+    gap: var(--space-m);
+}
+
+.progress__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3xs) var(--space-s);
+    margin-bottom: var(--space-2xs);
+}
+
+.progress__label {
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+.progress__value {
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.progress__track {
+    height: 0.75rem;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+}
+
+.progress__bar {
+    width: var(--value, 0%);
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-strong));
+}
+
+@media (min-width: 1024px) {
+    .progress-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-l) var(--space-2xl);
     }
-
-    .tab-contents ul li{
-        font-size: 20px;
-        padding-bottom: 15px;
-    }
-
-    .tab-contents.active-tab{
-        padding-bottom: 10px;
-    }
-
-    .container-progressbars{
-        padding-bottom: 90px;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .container-progress{
-        width: 100%;
-    }
-
-    .cert-title{
-        padding-bottom: 15px;
-    }
-
-    .btn.btn2{
-        display:flex;
-        justify-content: center;
-    }
-
-
 }

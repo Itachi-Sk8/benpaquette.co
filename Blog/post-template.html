@@ -1,113 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Blog Posts</title>
-        <link rel="shortcut icon" type="image/png" href="/Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="/CSS/Blog Posts/blog-post.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POST TITLE | Ben Paquette</title>
+    <meta name="description" content="ONE SENTENCE SUMMARY OF THE POST.">
+    <meta name="theme-color" content="#242424">
+    <link rel="icon" type="image/png" href="/Media/favicon.png">
 
-    <body>
-        <div>
-            <h1 id="benpaquette">Blogs</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/base.css">
+    <link rel="stylesheet" href="/CSS/Blog%20Posts/blog-post.css">
+    <script src="/JS/site.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========== Site header (shared) ========== -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="/">
+                <span class="site-brand__mark" aria-hidden="true">BP</span>
+                Ben Paquette
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="/">Home</a></li>
+                    <li><a class="site-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="site-nav__link" href="/techblog/" aria-current="page">Tech Blog</a></li>
+                    <li><a class="site-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="site-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
         </div>
-        <div id="header">
-            <div id="container-header">
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
+    </header>
+
+    <main id="main">
+        <!--
+            NEW POST CHECKLIST
+            1. Copy this file to /techblog/<post-slug>/index.html
+            2. Fill in <title> ("Post Title | Ben Paquette") and the meta description above.
+            3. Fill in the header: title, date (datetime="YYYY-MM-DD"), category tag, read time, topic tags.
+               Category tags: Personal = class="tag", Career = class="tag tag--danger",
+               Resources = class="tag tag--warning".
+            4. Write paragraphs as plain <p> elements. No <br> between them; .prose handles spacing.
+            5. Images: <img class="post__image" src="/CSS/images/..." alt="Describe the image"
+               width="(real px width)" height="(real px height)" loading="lazy">. No inline style widths.
+            6. Code: <pre><code>...</code></pre>. Tables: wrap in <div class="post__table">.
+               Video embeds: wrap the <iframe> in <div class="post__embed">.
+            7. Update the prev/next links here AND add a "Next" link to the previous post.
+            8. Add a card for the post to /techblog/index.html.
+        -->
+        <article class="post">
+            <header class="page-header container container--narrow post__header">
+                <a class="page-header__eyebrow post__back" href="/techblog/"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Tech Blog</a>
+                <h1 class="page-header__title post__title">TITLE</h1>
+                <div class="post__meta">
+                    <time class="post__meta-item" datetime="YYYY-MM-DD"><i class="fa-regular fa-calendar" aria-hidden="true"></i> DATE</time>
+                    <span class="tag">CATEGORY</span>
+                    <span class="post__meta-item"><i class="fa-regular fa-clock" aria-hidden="true"></i> X Minute Read</span>
+                </div>
+                <ul class="post__tags" role="list" aria-label="Topics">
+                    <li>#TAG</li>
+                    <li>#TAG</li>
+                </ul>
+            </header>
+
+            <div class="container container--narrow">
+                <div class="post__body post-content prose">
+                    <p></p>
+                    <p></p>
+                    <img class="post__image" src="/CSS/images/IMAGE.jpg" alt="DESCRIBE THE IMAGE" width="1280" height="720" loading="lazy">
+                    <p></p>
+                    <p class="post__signoff">~ Ben Paquette</p>
+                </div>
+
+                <nav class="post-nav" aria-label="More posts">
+                    <a class="post-nav__link post-nav__link--prev" href="/techblog/PREVIOUS-SLUG/" rel="prev">
+                        <span class="post-nav__label">&laquo; Previous</span>
+                        <span class="post-nav__title">PREVIOUS POST TITLE</span>
+                    </a>
+                    <a class="post-nav__link post-nav__link--next" href="/techblog/NEXT-SLUG/" rel="next">
+                        <span class="post-nav__label">Next &raquo;</span>
+                        <span class="post-nav__title">NEXT POST TITLE</span>
+                    </a>
+                    <a class="btn btn--outline btn--small post-nav__all" href="/techblog/">All posts</a>
                 </nav>
             </div>
+        </article>
+    </main>
+
+    <!-- ========== Site footer (shared) ========== -->
+    <footer class="site-footer">
+        <div class="site-footer__waves" aria-hidden="true">
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
         </div>
-
-        <main>
-            <article class="blog-post">
-                <header class="blog-header">
-                    <h3 class="post-title">TITLE</h3>
-                    <div class="post-meta">
-                        <br>
-                        <span class="post-date">DATE</span>
-                        <br>
-                        <br>
-                        <span class="post-tags">TAGS</span>
-                        <br>
-                    </div>
-                </header>
-
-                <div class="post-content">
-                    <p>
-                    </p>
-                    <br>
-                    <p>
-                    </p>
-                    <br>
-                    <p>
-                    </p>
-                    <br>
-                    <p>
-                    </p>
-                    <br>
-                    <p>
-                    </p>
-                    <br>
-                    <p>
-                    </p>
-                    <br>
-                    <p>
-                    </p>
-                    <br>
-                    <p>
-                    </p>
-                    <br>
-                    <p> ~ Ben Paquette</p>
-                </div>
-            </article>
-            <div class="transition">
-                <a href="#" class="previous"> &laquo; Previous</a>
-                <a href="#" class="next">Next &raquo;</a>
-            </div>
-        </main>
-
-        <!---------- Footer ------------>
-        <footer class="footer">
-            <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social-icon">
-              <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
+        <div class="container site-footer__inner">
+            <ul class="social-links">
+                <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
             </ul>
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-        
-            </ul>
-            <p>&copy;2024 Benjamin Paquette | All Rights Reserved</p>
-          </footer>
-          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    </body>
-    
+            <nav aria-label="Footer">
+                <ul class="footer-nav__list">
+                    <li><a class="footer-nav__link" href="/">Home</a></li>
+                    <li><a class="footer-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="footer-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="footer-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="footer-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+            <p class="site-footer__copy">&copy; <span data-current-year>2025</span> Benjamin Paquette. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

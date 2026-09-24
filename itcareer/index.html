@@ -1,168 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>IT Career</title>
-        <link rel="shortcut icon" type="image/png" href="../Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="../CSS/itcareer.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://kit.fontawesome.com/3e341576aa.js" crossorigin="anonymous"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT Career | Ben Paquette</title>
+    <meta name="description" content="Ben Paquette's IT career: skills, experience, education, certifications in progress and a downloadable résumé.">
+    <meta name="theme-color" content="#242424">
+    <link rel="icon" type="image/png" href="/Media/favicon.png">
 
-    <body>
-        <!---------Page Headers-------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/base.css">
+    <link rel="stylesheet" href="/CSS/itcareer.css">
+    <script src="/JS/site.js"></script>
+</head>
 
-        <div class="header">
-            <div class="title">
-                <h1>IT Career</h1>
-            </div>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-            <div class="line-break"></div>
-
-            <div class="container-header">
-                <nav>
-                    <ul class="menu">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <!-- ========== Site header (shared) ========== -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="/">
+                <span class="site-brand__mark" aria-hidden="true">BP</span>
+                Ben Paquette
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle__bars" aria-hidden="true"></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="/">Home</a></li>
+                    <li><a class="site-nav__link" href="/itcareer/" aria-current="page">IT Career</a></li>
+                    <li><a class="site-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="site-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="site-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="about">
+    <main id="main">
+        <header class="page-header container">
+            <h1 class="page-header__title">IT Career</h1>
+        </header>
+
+        <!-- About + career tabs -->
+        <section class="section section--tight" aria-labelledby="about-title">
             <div class="container">
-                <div class="row">
-                    <div class="about-col-1">
-                        <img class="about-col-1-pic" src="../Media/Benjamin-Paquette.png">
+                <div class="split about">
+                    <div class="about__media">
+                        <img class="about__photo" src="/Media/Benjamin-Paquette.png" alt="Portrait of Ben Paquette" width="1000" height="1000">
                     </div>
-                    <div class="about-col-2">
-                        <h1 class="sub-title">About Me</h1>
-                        <p class="sub-title-body">Hello! I am a young professional who 
-                            is currently working as an IT Professional Assistant. Over the past year 
-                            I have dedicated my time and efforts towards learning many different 
-                            skills within Information Technology. Currently, I am working towards the 
-                            CompTIA Security+ exam, while learning and implementing Python. As a 
-                            testiment to expanding my overall knowledge, I have built this website 
-                            from scratch to showcase my previous, current, and future accomplishments.</p>
+                    <div class="about__body">
+                        <h2 class="about__title" id="about-title">About Me</h2>
+                        <p class="about__text">Hello! I am a young professional who is currently working as an IT
+                            Professional Assistant. Over the past year I have dedicated my time and efforts towards
+                            learning many different skills within Information Technology. Currently, I am working
+                            towards the CompTIA Security+ exam, while learning and implementing Python. As a
+                            testament to expanding my overall knowledge, I have built this website from scratch to
+                            showcase my previous, current, and future accomplishments.</p>
 
-                            <div class="tab-titles">
-                                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                                <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                                <p class="tab-links" onclick="opentab('education')">Education</p>
-                                <p class="tab-links" onclick="opentab('resume')">Resume</p>
+                        <div class="tabs" data-tabs>
+                            <div class="tabs__list" role="tablist" aria-label="Career details">
+                                <button class="tabs__tab" type="button" role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="true">Skills</button>
+                                <button class="tabs__tab" type="button" role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="false" tabindex="-1">Experience</button>
+                                <button class="tabs__tab" type="button" role="tab" id="tab-education" aria-controls="panel-education" aria-selected="false" tabindex="-1">Education</button>
+                                <button class="tabs__tab" type="button" role="tab" id="tab-resume" aria-controls="panel-resume" aria-selected="false" tabindex="-1">Resume</button>
                             </div>
-                            <div class="tab-contents active-tab" id="skills">
-                                <ul>
-                                    <li><span>Hardware/Software</span><br>Endpoint Management, Computer Deployment, DNL Experience, Hardware Installations</li>
-                                    <li><span>Administration</span><br>Inventory Management, Effective Documentation, Team Management Experience</li>
-                                    <li><span>Other</span><br>HTML, CSS, JS, Python, ChatGPT/AI, & Adobe Products</li>
-                                </ul>
-                                
-                            </div><div class="tab-contents" id="experience">
-                                <ul>
-                                    <li><span>2024 - Current</span><br>IT Professional Assistant at The University of Georgia</li>
-                                    <li><span>2023 - 2024</span><br>Clinical Trials Coordinator at Louisiana State University</li>
-                                    <li><span>2022 - 2023</span><br>Lab Coordinator at Georgia Southern University</li>
-                                </ul>
-                                
-                            </div><div class="tab-contents" id="education">
-                                <ul>
-                                    <li><span>2023</span><br>Masters of Kinesiology from Georgia Southern University</li>
-                                    <li><span>2021</span><br>Bachelor of Science from Springfield College.</li>
-                                    <li><span>Certifications</span><br>CompTIA A+ 1101</li>
+
+                            <div class="tabs__panel" role="tabpanel" id="panel-skills" aria-labelledby="tab-skills" tabindex="0">
+                                <h3 class="tabs__panel-title">Skills</h3>
+                                <ul class="career-list">
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">Hardware/Software</span>
+                                        Endpoint Management, Computer Deployment, DNL Experience, Hardware Installations
+                                    </li>
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">Administration</span>
+                                        Inventory Management, Effective Documentation, Team Management Experience
+                                    </li>
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">Other</span>
+                                        HTML, CSS, JS, Python, ChatGPT/AI, &amp; Adobe Products
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-contents" id="resume">
-                                <a href="../Media/Resume_Paquette.pdf" download class="btn btn2"> Download Resume</a>
+
+                            <div class="tabs__panel" role="tabpanel" id="panel-experience" aria-labelledby="tab-experience" tabindex="0">
+                                <h3 class="tabs__panel-title">Experience</h3>
+                                <ul class="career-list">
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">2024 &ndash; Current</span>
+                                        IT Professional Assistant at The University of Georgia
+                                    </li>
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">2023 &ndash; 2024</span>
+                                        Clinical Trials Coordinator at Louisiana State University
+                                    </li>
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">2022 &ndash; 2023</span>
+                                        Lab Coordinator at Georgia Southern University
+                                    </li>
+                                </ul>
                             </div>
+
+                            <div class="tabs__panel" role="tabpanel" id="panel-education" aria-labelledby="tab-education" tabindex="0">
+                                <h3 class="tabs__panel-title">Education</h3>
+                                <ul class="career-list">
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">2023</span>
+                                        Masters of Kinesiology from Georgia Southern University
+                                    </li>
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">2021</span>
+                                        Bachelor of Science from Springfield College
+                                    </li>
+                                    <li class="career-list__item">
+                                        <span class="career-list__label">Certifications</span>
+                                        CompTIA A+ 1101
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tabs__panel" role="tabpanel" id="panel-resume" aria-labelledby="tab-resume" tabindex="0">
+                                <h3 class="tabs__panel-title">Resume</h3>
+                                <a class="btn" href="/Media/Resume_Paquette.pdf" download>
+                                    <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                                    Download Resume
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-progressbars">
-            <h1 class="cert-title">Certifications & Courses</h1> 
-            <p>CompTIA A+</p> 
-            <div class="container-progress"> 
-                <div class="skill comptia">60%</div> 
-            </div> 
-        
-            <p>CompTIA Security+</p> 
-            <div class="container-progress"> 
-                <div class="skill security">95%</div> 
-            </div> 
+        </section>
 
-            <p>Python Complete Bootcamp</p> 
-            <div class="container-progress"> 
-                <div class="skill python">40%</div> 
-            </div> 
-
-            <p>CompTIA Network+</p> 
-            <div class="container-progress"> 
-                <div class="skill networking">30%</div> 
+        <!-- Certification progress -->
+        <section class="section section--alt" aria-labelledby="progress-title">
+            <div class="container">
+                <h2 class="section-title" id="progress-title">Certifications &amp; Courses</h2>
+                <ul class="progress-list">
+                    <li class="progress">
+                        <div class="progress__head">
+                            <span class="progress__label" id="progress-aplus">CompTIA A+</span>
+                            <span class="progress__value">60%</span>
+                        </div>
+                        <div class="progress__track" role="progressbar" aria-labelledby="progress-aplus" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+                            <div class="progress__bar" style="--value: 60%"></div>
+                        </div>
+                    </li>
+                    <li class="progress">
+                        <div class="progress__head">
+                            <span class="progress__label" id="progress-security">CompTIA Security+</span>
+                            <span class="progress__value">95%</span>
+                        </div>
+                        <div class="progress__track" role="progressbar" aria-labelledby="progress-security" aria-valuemin="0" aria-valuemax="100" aria-valuenow="95">
+                            <div class="progress__bar" style="--value: 95%"></div>
+                        </div>
+                    </li>
+                    <li class="progress">
+                        <div class="progress__head">
+                            <span class="progress__label" id="progress-python">Python Complete Bootcamp</span>
+                            <span class="progress__value">40%</span>
+                        </div>
+                        <div class="progress__track" role="progressbar" aria-labelledby="progress-python" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40">
+                            <div class="progress__bar" style="--value: 40%"></div>
+                        </div>
+                    </li>
+                    <li class="progress">
+                        <div class="progress__head">
+                            <span class="progress__label" id="progress-network">CompTIA Network+</span>
+                            <span class="progress__value">30%</span>
+                        </div>
+                        <div class="progress__track" role="progressbar" aria-labelledby="progress-network" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30">
+                            <div class="progress__bar" style="--value: 30%"></div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+        </section>
+    </main>
+
+    <!-- ========== Site footer (shared) ========== -->
+    <footer class="site-footer">
+        <div class="site-footer__waves" aria-hidden="true">
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
         </div>
-
-
-     <!---------- Footer ------------>
-
-        <footer class="footer">
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social-icon">
-                <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
+        <div class="container site-footer__inner">
+            <ul class="social-links">
+                <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
             </ul>
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-            </ul>
+            <nav aria-label="Footer">
+                <ul class="footer-nav__list">
+                    <li><a class="footer-nav__link" href="/">Home</a></li>
+                    <li><a class="footer-nav__link" href="/itcareer/">IT Career</a></li>
+                    <li><a class="footer-nav__link" href="/techblog/">Tech Blog</a></li>
+                    <li><a class="footer-nav__link" href="/gallery/">Gallery</a></li>
+                    <li><a class="footer-nav__link" href="/projects/">Projects</a></li>
+                </ul>
+            </nav>
+            <p class="site-footer__copy">&copy; <span data-current-year>2025</span> Benjamin Paquette. All rights reserved.</p>
+        </div>
+    </footer>
 
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-
-        </footer>
-
-    </body>
-
-
-
- <!-- This section is for scripts -->
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <script>
-
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-
+    <script src="/JS/tabs.js"></script>
+</body>
 </html>
