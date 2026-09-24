@@ -36,7 +36,7 @@ a.gallery-periods__link:hover {
     border-color: var(--color-border);
     background: transparent;
     color: var(--color-text-muted);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .gallery-periods__note {

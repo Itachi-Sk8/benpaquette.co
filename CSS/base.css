@@ -1,9 +1,44 @@
 /* ==========================================================================
    base.css — shared foundation for benpaquette.work
-   Load order on every page: Google Fonts -> Font Awesome -> base.css -> page CSS
+   Load order on every page: Font Awesome -> base.css -> page CSS (fonts are in fonts/)
    Mobile-first. Breakpoints (min-width): 600px tablet, 768px nav, 1024px laptop,
    1440px large monitor. See CSS/FOUNDATION.md for usage.
    ========================================================================== */
+
+/* ---------- 0. Fonts (self-hosted, latin subset) ----------
+   Inter 400/600 (one variable file) + 400 italic, Poppins 600/700.
+   Only use these weights; anything else is synthesised or snaps to the nearest. */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url("../fonts/inter-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/inter-italic-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/poppins-600-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/poppins-700-latin.woff2") format("woff2");
+}
 
 /* ---------- 1. Design tokens ---------- */
 :root {
@@ -424,7 +459,7 @@ hr {
     padding: var(--space-2xs) var(--space-xs);
     color: var(--color-text-muted);
     font-size: var(--step--1);
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     border-radius: var(--radius-s);
     transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
@@ -860,7 +895,7 @@ hr {
     display: inline-block;
     padding: var(--space-3xs) 0;
     color: var(--color-on-accent);
-    font-weight: 500;
+    font-weight: 600;
     font-size: var(--step--1);
     text-decoration: none;
 }

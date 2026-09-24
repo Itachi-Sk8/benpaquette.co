@@ -30,7 +30,7 @@
 .blog-card__date {
     color: var(--color-text-muted);
     font-size: var(--step--1);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .blog-card__read {

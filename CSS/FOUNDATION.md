@@ -21,9 +21,7 @@ Files:
     <meta name="theme-color" content="#242424">
     <link rel="icon" type="image/png" href="/Media/favicon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/CSS/base.css">
     <link rel="stylesheet" href="/CSS/PAGE.css">
@@ -139,6 +137,7 @@ Always use tokens. Don't hard-code hex values, px font sizes or random spacing i
 
 **Type:**
 - `--font-body` is Inter. `--font-heading` is Poppins (applied to h1–h6 automatically).
+- Fonts are self-hosted in `fonts/` (latin subset, `@font-face` at the top of base.css). Only these are loaded: **Inter 400 and 600, Inter 400 italic, Poppins 600 and 700.** Don't use other weights (500, 700 Inter, Poppins italic); the browser would fake them. Don't add Google Fonts `<link>`s. Every page preloads `/fonts/inter-latin.woff2` (the body font).
 - Fluid scale: `--step--1` (small/meta), `--step-0` (body), `--step-1`, `--step-2`, `--step-3`, `--step-4`, `--step-5` (hero/page title). Defaults: h1 `--step-4`, h2 `--step-3`, h3 `--step-2`, h4 `--step-1`.
 - Line heights: `--leading-tight`, `--leading-snug`, `--leading-body`.
 
