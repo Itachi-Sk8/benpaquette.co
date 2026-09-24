@@ -46,6 +46,8 @@ defaults:
       type: posts
     values:
       layout: post
+      styles:
+        - /CSS/blog-post.css
 
 # Not part of the public site.
 exclude:
