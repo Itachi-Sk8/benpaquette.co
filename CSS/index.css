@@ -110,12 +110,13 @@
 }
 
 .quote__text {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);     /* Inter has a real italic loaded; Poppins italic isn't */
     font-size: var(--step-3);
     font-style: italic;
-    font-weight: 500;
+    font-weight: 400;
     line-height: var(--leading-snug);
     color: var(--color-heading);
+    letter-spacing: -0.01em;
     text-wrap: balance;
 }
 
