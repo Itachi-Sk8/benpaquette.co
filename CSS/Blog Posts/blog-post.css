@@ -76,6 +76,12 @@
     box-shadow: var(--shadow-card);
 }
 
+/* Small logos and wordmarks sit on the text without the photo frame */
+.post__image--logo {
+    border: 0;
+    box-shadow: none;
+}
+
 .post__image-link {
     display: block;
     border-radius: var(--radius-m);
