@@ -1,0 +1,83 @@
+# Site settings for Jekyll (built natively by GitHub Pages).
+# Changes here need a restart of `bundle exec jekyll serve`.
+
+title: Ben Paquette
+# The homepage <title> is "title | tagline"; every other page is "Page title | title".
+tagline: Information Technology Professional
+description: >-
+  Ben Paquette is an Information Technology professional. Explore his IT career,
+  tech blog, photo gallery and projects.
+url: "https://benpaquette.work"
+baseurl: ""
+lang: en
+locale: en_US
+timezone: America/New_York
+
+author:
+  name: Ben Paquette
+  url: "https://benpaquette.work/"
+
+social:
+  name: Ben Paquette
+  links:
+    - "https://www.linkedin.com/in/benjamin-paquette-/"
+    - "https://github.com/bennyP251"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Posts live in _posts/ and set their own `permalink:` so URLs never change.
+permalink: /techblog/:title/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      # Share image for og:image / twitter:image; posts override it with their own.
+      image:
+        path: /assets/img/share/og-default.jpg
+        width: 1200
+        height: 630
+        alt: "Ben Paquette, IT Support and Information Technology"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      styles:
+        - /CSS/blog-post.css
+  # Keep the resume PDF and other files in Media/ out of sitemap.xml.
+  - scope:
+      path: Media
+    values:
+      sitemap: false
+
+# Not part of the public site.
+exclude:
+  - Archive/
+  - HTML/
+  - "CSS/Not Live/"
+  - CSS/FOUNDATION.md
+  - assets/img/MANIFEST.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
+  # Original images. The site serves the web-sized copies in assets/img/ instead
+  # (see assets/img/MANIFEST.md); nothing in the built site links to these.
+  # CSS/images/grey-hack-2.jpg stays published: it is smaller than its re-encode.
+  - images/
+  - CSS/images/JPG/
+  - "CSS/images/*.png"
+  - "CSS/images/blog-post-*"
+  - "CSS/images/grey-hack-[134].jpg"
+  - CSS/images/cybersecurity-1.jpg
+  - CSS/images/nola-1.jpg
+  - CSS/images/Paquette_HDI_Certification.jpg
+  - Media/BEN_2.jpg
+  - Media/Benjamin-Paquette.png
+  - Media/background.jpg
+  - Media/favicon.png

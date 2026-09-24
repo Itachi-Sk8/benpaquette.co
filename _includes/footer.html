@@ -1,0 +1,24 @@
+    <!-- ========== Site footer (shared) ========== -->
+    <footer class="site-footer">
+        <div class="site-footer__waves" aria-hidden="true">
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+            <div class="site-footer__wave"></div>
+        </div>
+        <div class="container site-footer__inner">
+            <ul class="social-links">
+                <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+            </ul>
+            <nav aria-label="Footer">
+                <ul class="footer-nav__list">
+                    {%- for link in site.data.navigation %}
+                    {%- include nav-current.html url=link.url %}
+                    <li><a class="footer-nav__link" href="{{ link.url }}"{% if nav_current %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+                    {%- endfor %}
+                </ul>
+            </nav>
+            <p class="site-footer__copy">&copy; <span data-current-year>{{ site.time | date: "%Y" }}</span> Benjamin Paquette. All rights reserved.</p>
+        </div>
+    </footer>

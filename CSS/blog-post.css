@@ -1,0 +1,153 @@
+/* blog-post.css — individual tech blog posts only. Loaded after base.css. Mobile-first.
+   Markup: _layouts/post.html (new posts: _drafts/post-template.html). Body text spacing comes from .prose in base.css. */
+
+/* ---------- Post header ---------- */
+.post__header {
+    padding-bottom: var(--space-l);
+}
+
+.post__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    text-decoration: none;
+}
+
+.post__back:hover {
+    text-decoration: underline;
+}
+
+.post__title {
+    font-size: var(--step-4);
+}
+
+.post__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2xs) var(--space-s);
+    margin-top: var(--space-m);
+    color: var(--color-text-muted);
+    font-size: var(--step--1);
+}
+
+.post__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3xs);
+}
+
+.post__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3xs) var(--space-xs);
+    margin-top: var(--space-xs);
+    color: var(--color-accent);
+    font-size: var(--step--1);
+    font-weight: 400;
+}
+
+/* ---------- Post body ---------- */
+.post__body {
+    margin-inline: auto;
+    overflow-wrap: break-word;
+}
+
+/* On tablets and up the text sits on a panel, as on the original design */
+@media (min-width: 600px) {
+    .post__body {
+        max-width: none;
+        padding: var(--space-l) clamp(var(--space-m), 4vw, var(--space-xl));
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-m);
+        box-shadow: var(--shadow-card);
+    }
+}
+
+.post__image {
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+/* Small logos and wordmarks sit on the text without the photo frame */
+.post__image--logo {
+    border: 0;
+    box-shadow: none;
+}
+
+.post__image-link {
+    display: block;
+    border-radius: var(--radius-m);
+}
+
+.post__image-link:hover .post__image {
+    border-color: var(--color-accent);
+}
+
+.post__signoff {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* ---------- Previous / next ---------- */
+.post-nav {
+    display: grid;
+    gap: var(--space-s);
+    margin-top: var(--space-xl);
+}
+
+.post-nav__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+    padding: var(--space-s) var(--space-m);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: border-color var(--dur-fast) var(--ease), transform var(--dur) var(--ease);
+}
+
+.post-nav__link:hover {
+    border-color: var(--color-accent);
+    color: var(--color-heading);
+    transform: translateY(-2px);
+}
+
+.post-nav__label {
+    color: var(--color-accent);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.post-nav__title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: var(--leading-snug);
+    overflow-wrap: break-word;
+}
+
+.post-nav__link--next {
+    text-align: right;
+}
+
+.post-nav__all {
+    justify-self: center;
+    margin-top: var(--space-2xs);
+}
+
+@media (min-width: 600px) {
+    .post-nav {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .post-nav__link--prev { grid-column: 1; }
+    .post-nav__link--next { grid-column: 2; }
+    .post-nav__all { grid-column: 1 / -1; }
+}

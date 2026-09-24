@@ -1,0 +1,43 @@
+---
+layout: default
+---
+        <article class="post">
+            <header class="page-header container container--narrow post__header">
+                <a class="page-header__eyebrow post__back" href="/techblog/"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Tech Blog</a>
+                <h1 class="page-header__title post__title">{{ page.title_html | default: page.title }}</h1>
+                <div class="post__meta">
+                    <time class="post__meta-item" datetime="{{ page.date | date: '%Y-%m-%d' }}"><i class="fa-regular fa-calendar" aria-hidden="true"></i> {{ page.date | date: '%B %-d, %Y' }}</time>
+                    <span class="{{ page.tag_class | default: 'tag' }}">{{ page.category }}</span>
+                    <span class="post__meta-item"><i class="fa-regular fa-clock" aria-hidden="true"></i> {{ page.read_time }} min read</span>
+                </div>
+                {%- if page.topics %}
+                <ul class="post__tags" role="list" aria-label="Topics">
+                    {%- for topic in page.topics %}
+                    <li>#{{ topic }}</li>
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
+            </header>
+
+            <div class="container container--narrow">
+                <div class="post__body post-content prose">
+{{ content }}
+                </div>
+
+                <nav class="post-nav" aria-label="More posts">
+                    {%- if page.previous %}
+                    <a class="post-nav__link post-nav__link--prev" href="{{ page.previous.url }}" rel="prev">
+                        <span class="post-nav__label"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Previous</span>
+                        <span class="post-nav__title">{{ page.previous.title }}</span>
+                    </a>
+                    {%- endif %}
+                    {%- if page.next %}
+                    <a class="post-nav__link post-nav__link--next" href="{{ page.next.url }}" rel="next">
+                        <span class="post-nav__label">Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        <span class="post-nav__title">{{ page.next.title }}</span>
+                    </a>
+                    {%- endif %}
+                    <a class="btn btn--outline btn--small post-nav__all" href="/techblog/">All posts</a>
+                </nav>
+            </div>
+        </article>

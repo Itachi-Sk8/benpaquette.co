@@ -1,0 +1,10 @@
+.claude/
+.DS_Store
+Thumbs.db
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/
+# Bundler lockfile is platform-specific (Windows); GitHub Pages does not use it
+Gemfile.lock

@@ -1,185 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Photo Gallery</title>
-        <link rel="shortcut icon" type="image/png" href="../Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="../CSS/gallery.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://kit.fontawesome.com/3e341576aa.js" crossorigin="anonymous"></script>
-    </head>
+---
+title: Gallery
+description: "Photography by Ben Paquette, shot on a Canon EOS Rebel SL2."
+styles:
+  - /CSS/gallery.css
+---
+        <header class="page-header container">
+            <h1 class="page-header__title">Photo Gallery</h1>
+            <p class="page-header__lead">Pictures are shot with a <span class="accent">Canon EOS Rebel SL2</span> using a <span class="accent">Canon EF-S 18&ndash;55mm lens</span>.</p>
+        </header>
 
-  <body>
-      <!---------Page Headers-------->
-    <div class="title">
-      <h1>Photo Gallery</h1>
-    </div>
-
-    <div class="line-break"></div>
-
-    <div class="header">
-      <div class="container-header">
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/itcareer">IT Career</a></li>
-            <li><a href="/techblog">Tech Blog</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-            <li><a href="/projects">Projects</a></li>
-          </ul>
+        <nav class="container gallery-periods" aria-label="Photo collections">
+            <ul class="gallery-periods__list" role="list">
+                <li><a class="gallery-periods__link" href="#jul-dec-2024">July to December 2024</a></li>
+                <li><span class="gallery-periods__link gallery-periods__link--soon">January to June 2025 <span class="gallery-periods__note">Coming soon</span></span></li>
+                <li><span class="gallery-periods__link gallery-periods__link--soon">July to December 2025 <span class="gallery-periods__note">Coming soon</span></span></li>
+                <li><span class="gallery-periods__link gallery-periods__link--soon">January to June 2026 <span class="gallery-periods__note">Coming soon</span></span></li>
+            </ul>
         </nav>
-      </div>
-    </div>
 
-    <div class="header-text">
-      <p class="camera">Pictures are shot with a <span>Cannon EOS Rebel SL2</span> using a <span>Cannon EFS 18mm-55mm lens</span></p>
-      <hr>
-    </div>
-
-  <div class="quicklinks">
-    <div class="container">
-      <nav class="quicklinks">
-        <ul class="sidemenu">
-          <li class="date-text"><a class="dates" href="#July to December 2024">July to December 2024</a></li>
-          <li class="date-text"><a class="dates" href="#">January to June 2025</a></li>
-          <li class="date-text"><a class="dates" href="#">July to December 2025</a></li>
-          <li class="date-text"><a class="dates" href="#">January to June 2026</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <hr>
-<!-----------------If you're reading this please dont steal my pictures!------------------->
-<!-----------------Photos------------------->
-<div id="July to December 2024">
-  <div class="photocontainer">
-    <div class="labels">
-      <p>July to December 2024</p>
-    </div>
-    <div class="row"> 
-      <div class="column">
-        <title>Photo Gallery</title>
-        <a target="_blank" href="../images/1.png">
-          <img src="../CSS/images/JPG/1.jpg">
-        </a>
-        <a target="_blank" href="../images/2.png">
-          <img src="../CSS/images/JPG/2.jpg">
-        </a>
-        <a target="_blank" href="../images/3.png">
-          <img src="../CSS/images/JPG/3.jpg">
-        </a>
-        <a target="_blank" href="../images/4.png">
-          <img src="../CSS/images/JPG/4.jpg">
-        </a>
-        <!-- <a target="_blank" href="../CSS/images/PNG/1.png">
-          <img src="../CSS/images/JPG/1.jpg"> -->
-        </a>
-        <a target="_blank" href="../images/17.png">
-          <img src="../CSS/images/JPG/17.jpg">
-        </a>
-        <a target="_blank" href="../images/16.png">
-          <img src="../CSS/images/JPG/16.jpg">
-        </a>
-        <a target="_blank" href="../images/21.png">
-          <img src="../CSS/images/JPG/21.jpg">
-        </a>
-        <a target="_blank" href="../images/22.jpg">
-          <img src="../CSS/images/JPG/22.jpg">
-        </a>
-        <a target="_blank" href="../images/26.png">
-          <img src="../CSS/images/JPG/26.jpg">
-        </a>
-      </div>
-      <div class="column">
-        <a target="_blank" href="../images/6.png">
-          <img src="../CSS/images/JPG/6.jpg">
-        </a>
-        <a target="_blank" href="../images/7.png">
-          <img src="../CSS/images/JPG/7.jpg">
-        </a>
-        <a target="_blank" href="../images/8.png">
-          <img src="../CSS/images/JPG/8.jpg">
-        </a>
-        <a target="_blank" href="../images/9.png">
-          <img src="../CSS/images/JPG/9.jpg">
-        </a>
-        <a target="_blank" href="../images/10.png">
-          <img src="../CSS/images/JPG/10.jpg">
-        </a>
-        <a target="_blank" href="../images/18.png">
-          <img src="../CSS/images/JPG/18.jpg">
-        </a>
-        <a target="_blank" href="../images/19.png">
-          <img src="../CSS/images/JPG/19.jpg">
-        </a>
-        <a target="_blank" href="../images/23.jpg">
-          <img src="../CSS/images/JPG/23.jpg">
-        </a>
-        <a target="_blank" href="../images/24.png">
-          <img src="../CSS/images/JPG/24.jpg">
-        </a>
-    </div>
-      <div class="column">
-        <a target="_blank" href="../images/11.png">
-          <img src="../CSS/images/JPG/11.jpg">
-        </a>
-        <a target="_blank" href="../images/12.png">
-          <img src="../CSS/images/JPG/12.jpg">
-        </a>
-        <a target="_blank" href="../images/13.png">
-          <img src="../CSS/images/JPG/13.jpg">
-        </a>
-        <a target="_blank" href="../images/14.png">
-          <img src="../CSS/images/JPG/14.jpg">
-        </a>
-        <a target="_blank" href="../images/15.png">
-          <img src="../CSS/images/JPG/15.jpg">
-        </a>
-        <a target="_blank" href="../images/20.png">
-          <img src="../CSS/images/JPG/20.jpg">
-        </a>
-        <a target="_blank" href="../images/25.png">
-          <img src="../CSS/images/JPG/25.jpg">
-        </a>
-        <a target="_blank" href="../images/27.jpg">
-          <img src="../CSS/images/JPG/27.jpg">
-        </a>
-      </div>
-
-<div class="spacer"></div>
-
-<!---------- Footer ------------>
-
-<footer class="footer">
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
+        <!-- If you're reading this please don't steal my pictures! -->
+        <section class="section section--tight gallery" id="jul-dec-2024" aria-labelledby="jul-dec-2024-title">
+            <div class="container container--wide">
+                <h2 class="section-title gallery__title" id="jul-dec-2024-title">July to December 2024</h2>
+                <ul class="gallery__grid" role="list">
+                    {%- comment -%} Photos, alt text and sizes: _data/gallery.yml {%- endcomment -%}
+                    {%- for photo in site.data.gallery %}
+                    {%- assign base = "/assets/img/gallery/" | append: photo.id %}
+                    <li class="gallery__item">
+                        <a class="gallery__link" href="{{ base }}-2560.jpg" target="_blank" rel="noopener">
+                            <img class="gallery__img" src="{{ base }}-800.jpg" srcset="{{ base }}-800.jpg 800w, {{ base }}-1600.jpg 1600w" sizes="(min-width: 1440px) 25vw, (min-width: 1024px) 33vw, (min-width: 600px) 50vw, 100vw" alt="{{ photo.alt | escape }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy" decoding="async">
+                            <span class="visually-hidden">(opens full size in a new tab)</span>
+                        </a>
+                    </li>
+                    {%- endfor %}
+                </ul>
             </div>
-            <ul class="social-icon">
-            <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
-            </ul>
-
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-            </ul>
-
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-
-        </footer>
-    </body>
-</html>
+        </section>

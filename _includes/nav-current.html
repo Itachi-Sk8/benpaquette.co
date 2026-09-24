@@ -1,0 +1,8 @@
+{%- comment -%} Sets `nav_current` to true when `include.url` is the current section. {%- endcomment -%}
+{%- assign nav_current = false -%}
+{%- if include.url == "/" -%}
+  {%- if page.url == "/" or page.url == "/index.html" -%}{%- assign nav_current = true -%}{%- endif -%}
+{%- else -%}
+  {%- assign nav_prefix = page.url | slice: 0, include.url.size -%}
+  {%- if nav_prefix == include.url -%}{%- assign nav_current = true -%}{%- endif -%}
+{%- endif -%}

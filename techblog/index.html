@@ -1,170 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Blog Posts</title>
-        <link rel="shortcut icon" type="image/png" href="../Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="../CSS/blog.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </head>
+---
+title: Tech Blog
+description: "Ben Paquette's tech blog: breaking into IT, life on the helpdesk, certifications and resources that helped along the way."
+styles:
+  - /CSS/blog.css
+---
+        <header class="page-header container">
+            <span class="page-header__eyebrow">Tech Blog</span>
+            <h1 class="page-header__title">Breaking into IT</h1>
+        </header>
 
-    <body>
-        <div class="title">
-            <h1>Breaking into IT</h1>
-        </div>
-
-        <div class="line-break"></div>
-
-        <div class="header">
-            <div class="container-header">
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
-                </nav>
+        <section class="section section--tight blog-list" aria-label="Blog posts">
+            <div class="container">
+                <ul class="grid blog-list__grid" role="list">
+                    {%- comment -%}
+                        One card per post in _posts/, newest first; the newest is featured.
+                        Card fields come from each post's front matter (see _drafts/post-template.html).
+                    {%- endcomment -%}
+                    {%- for post in site.posts %}
+                    <li class="card card--link blog-card{% if forloop.first %} blog-card--featured{% endif %}">
+                        <div class="card__media">
+                            <img{% if post.card.class %} class="{{ post.card.class }}"{% endif %} src="{{ post.card.src }}"{% if post.card.srcset %} srcset="{{ post.card.srcset }}" sizes="{% if forloop.first %}(min-width: 1440px) 55rem, (min-width: 1024px) 64vw{% else %}(min-width: 1024px) 33vw{% endif %}, (min-width: 600px) 50vw, 100vw"{% endif %} alt="{{ post.card.alt | escape }}" width="{{ post.card.width }}" height="{{ post.card.height }}"{% if forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+                        </div>
+                        <div class="card__body">
+                            <p class="blog-card__meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time><span aria-hidden="true">&middot;</span><span>{{ post.read_time }} min read</span></p>
+                            <h2 class="card__title"><a class="card__link" href="{{ post.url }}">{{ post.title }}</a></h2>
+                            <p class="card__text">{{ post.summary }}</p>
+                            <div class="card__footer">
+                                <span class="{{ post.tag_class | default: 'tag' }}">{{ post.category }}</span>
+                                <span class="card__cue" aria-hidden="true">Read post <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    {%- endfor %}
+                </ul>
             </div>
-        </div>
-
-        <div class="line-break-post"></div>
-        
-        <div class="blog-section">
-            <!-- <h1>Latest Blog Posts</h1> -->
-            <div class="blog-cards">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/blog-post-1.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>Clinical Trials Coordinator to the World of Information Technology</h2>
-                        <p>This is a glimpse into my journey from working at LSU as a Clinical Trials Coordinator on an NIH R1 grant-funded project to beginning a new career in IT at the University of Georgia.</p>
-                        <div class="bottom-card">
-                            <h4 class="category">Personal</h4>
-                            <a href="/techblog/clinical-trials-coordinator-to-the-world-of-information-technology/">Read More</a>
-                            <h4 class="content-time">4.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/blog-post-2.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>The Journey to the Helpdesk</h2>
-                        <p>From applying to 30 jobs, to the sad reality of getting your foot in the door. Never counting yourself out and having faith that your hardwork will pay off.</p>
-                        <div class="bottom-card">
-                            <h4 class="category">Personal</h4>
-                            <a href="/techblog/the-journey-to-the-helpdesk/">Read More</a>
-                            <h4 class="content-time">5.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/blog-post-3.JPG">
-                    </div>
-                    <div class="blog-content">
-                        <h2>6 Months in Helpdesk</h2>
-                        <p>Your first IT job can range from a variety of places: MSP, online call centers or in my case The University of Georgia. My first 6 months was not what I expected but the growth and outlook it gave me has steered me in a successful path.  </p>
-                        <div class="bottom-card">
-                            <h4 class="category" style="color: rgb(226, 1, 1);">Career</h4>
-                            <a href="/techblog/6-months-in-helpdesk/">Read More</a>
-                            <h4 class="content-time" style="color: rgb(226, 1, 1);">3.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/grey-hack-3.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>Tech Resource Guide: Grey Hack</h2>
-                        <p>This Tech Resource guide will go over the Steam game <b>Grey Hack</b>, a massively multiplayer hacking simulator game. This game has been a huge step in my IT career and more specifcally my cybersecurity career.</p>
-                        <div class="bottom-card">                         
-                            <h4 class="category" style="color: yellow;">Resources</h4>
-                            <a class="readmore" href="/techblog/tech-resource-guide/grey-hack/">Read More</a>
-                            <h4 class="content-time" style="color: yellow;">5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/Paquette_HDI_Certification.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>HDI - Support Center Analyst Training</h2>
-                        <p>After passing my HDI - Support Center Analyst certification, I took some time to reflect on the class as a whole and the implications it will assist with in my day to day life.</p>
-                        <div class="bottom-card">
-                            <h4 class="category" style="color: rgb(226, 1, 1);">Career</h4>
-                            <a class="readmore" href="/techblog/hdi-support-center-analyst-training/">Read More</a>
-                            <h4 class="content-time" style="color: rgb(226, 1, 1);">3.5 Minute Read</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!------------------------------ Blog Card Template ------------------------>
-                <!-- <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="../CSS/images/JPG/6.jpg">
-                    </div>
-                    <div class="blog-content">
-                        <h2>Title</h2>
-                        <p>Intro</p>
-                        <div class="bottom-card">
-                            <h4 class="category">Category</h4>
-                            <a class="readmore" href="/HTML/Blog Posts/post-2.html">Read More</a>
-                            <h4 class="content-time">Time to Read</h4>
-                        </div>
-                    </div>
-                </div> -->
-
-            </div>
-        </div>
-
-
-    <!---------- Footer ------------>
-        <footer class="footer">
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social-icon">
-                <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                    </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                    </a></li>
-            </ul>
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-            </ul>
-
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-
-        </footer>
-    </body>
-
-
-
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-
-
-
-</html>
+        </section>

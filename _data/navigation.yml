@@ -1,0 +1,13 @@
+# Main and footer nav, in order. A link is marked aria-current="page" when the
+# page URL starts with it (Home only on "/"), so blog posts mark Tech Blog.
+# JS/site.js applies the same rule in the browser.
+- title: Home
+  url: /
+- title: IT Career
+  url: /itcareer/
+- title: Tech Blog
+  url: /techblog/
+- title: Gallery
+  url: /gallery/
+- title: Projects
+  url: /projects/

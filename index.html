@@ -1,116 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Home Page</title>
-        <link rel="shortcut icon" type="image/png" href="../Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="../CSS/index.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </head>
-
-    <body>
-        <div class="title">
-            <h1>Ben Paquette</h1>
-        </div>
-
-        <div class="line-break"></div>
-
-        <div class="header">
-            <div class="container-header">
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
-                </nav>
+---
+description: "Ben Paquette is an Information Technology professional. Explore his IT career, tech blog, photo gallery and projects."
+# Person structured data (name, job, employer, schools, profiles): _includes/person-json-ld.html
+person_json_ld: true
+styles:
+  - /CSS/index.css
+---
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero__inner">
+                <div class="hero__text">
+                    <p class="eyebrow">Information Technology Professional</p>
+                    <h1 class="hero__title">Ben Paquette</h1>
+                    <p class="hero__lead">IT support and systems professional who enjoys solving problems,
+                        documenting what works, and always learning the next thing.</p>
+                    <div class="cluster hero__actions">
+                        <a class="btn" href="/itcareer/">View my IT career <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a class="btn btn--outline" href="/techblog/">Read the tech blog</a>
+                    </div>
+                </div>
+                <div class="hero__media">
+                    <img class="hero__photo" src="/assets/img/profile/ben-headshot-400.jpg" srcset="/assets/img/profile/ben-headshot-400.jpg 400w, /assets/img/profile/ben-headshot-800.jpg 800w" sizes="(min-width: 1024px) 22rem, 13rem" alt="Portrait of Ben Paquette" width="400" height="400" fetchpriority="high">
+                </div>
             </div>
-        </div>
+        </section>
 
-    <!------Quote-------->
-
-        <div class="header-text">
-            <p class="job-title">Information Technology Professional</p>
-                <h1 class="quote">"I always thought the idea<br> of <span>Education</span> was to learn <br>to think for <span>Yourself</span> "</h1>
-            <p class="author"> ~ Robin Williams</p>
-        </div> 
-  
-
-    <!---------- Footer ------------>
-
-        <footer class="footer">
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
+        <!-- Quote -->
+        <section class="section quote-section" aria-label="Favourite quote">
+            <div class="container container--narrow">
+                <figure class="quote">
+                    <blockquote class="quote__text">
+                        <p>&ldquo;I always thought the idea of <span class="accent">education</span> was to learn to think for <span class="accent">yourself</span>.&rdquo;</p>
+                    </blockquote>
+                    <figcaption class="quote__author">Robin Williams</figcaption>
+                </figure>
             </div>
-            <ul class="social-icon">
-            <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
-            </ul>
+        </section>
 
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-            </ul>
-
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-
-        </footer>
-    </body> 
-
-
-
-
-    <!-- -------Scripts ------------->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <script>
-
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-
-
-    </script>
-
-    <script>
-
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu(){
-            sidemenu.style.right = "0";
-        }
-        function closemenu(){
-            sidemenu.style.right = "-200px";
-        }
-    </script>
-
-    
-</html>
+        <!-- Explore -->
+        <section class="section section--tight explore" aria-labelledby="explore-title">
+            <div class="container">
+                <h2 class="section-title text-center" id="explore-title">Explore the site</h2>
+                <ul class="grid explore__grid" role="list">
+                    <li class="card card--link">
+                        <div class="card__body">
+                            <span class="card__icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
+                            <h3 class="card__title"><a class="card__link" href="/itcareer/">IT Career</a></h3>
+                            <p class="card__text">Skills, experience, education, certifications and my r&eacute;sum&eacute;.</p>
+                            <span class="card__cue" aria-hidden="true">View career <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </li>
+                    <li class="card card--link">
+                        <div class="card__body">
+                            <span class="card__icon" aria-hidden="true"><i class="fa-solid fa-pen-nib"></i></span>
+                            <h3 class="card__title"><a class="card__link" href="/techblog/">Tech Blog</a></h3>
+                            <p class="card__text">Writing about breaking into IT, the helpdesk, and resources that helped.</p>
+                            <span class="card__cue" aria-hidden="true">Read the blog <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </li>
+                    <li class="card card--link">
+                        <div class="card__body">
+                            <span class="card__icon" aria-hidden="true"><i class="fa-solid fa-camera"></i></span>
+                            <h3 class="card__title"><a class="card__link" href="/gallery/">Gallery</a></h3>
+                            <p class="card__text">Photography from the last couple of years, shot on a Canon DSLR.</p>
+                            <span class="card__cue" aria-hidden="true">See photos <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </li>
+                    <li class="card card--link">
+                        <div class="card__body">
+                            <span class="card__icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+                            <h3 class="card__title"><a class="card__link" href="/projects/">Projects</a></h3>
+                            <p class="card__text">What I'm building now and what I've finished, including this website.</p>
+                            <span class="card__cue" aria-hidden="true">See projects <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>

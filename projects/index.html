@@ -1,145 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Projects</title>
-        <link rel="shortcut icon" type="image/png" href="../Media/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <link rel="stylesheet" href="../CSS/projects.css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    </head>
+---
+title: Projects
+description: "Projects Ben Paquette is working on and has completed, including this website."
+styles:
+  - /CSS/projects.css
+---
+        <header class="page-header container">
+            <h1 class="page-header__title">Projects</h1>
+            <p class="page-header__lead">What I&rsquo;m working on now, and what I&rsquo;ve already finished.</p>
+        </header>
 
-    <body>
-        <!---------Page Headers-------->
-        <div class="title">
-            <h1>Projects</h1>
-        </div>
-
-        <div class="line-break"></div>
-
-        <div class="header">
-            <div class="container-header">
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/itcareer">IT Career</a></li>
-                        <li><a href="/techblog">Tech Blog</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <main>
+        <section class="section section--tight" aria-labelledby="in-progress-title">
             <div class="container">
-                <div class="row">
-                    <div class="column-1">
-                        <h2>Projects In Progress</h2>
-                        <div class="project-item">
-                            <h3 class="to-do">Upload New Photos</h3>
-                            <p>I have another 6 months worth of pictures that I need to add to my Gallery section.</p>
+                <h2 class="section-title" id="in-progress-title">
+                    Projects In Progress <span class="projects__count" aria-hidden="true">5</span>
+                </h2>
+                <ul class="grid projects__grid" role="list">
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon project__icon--todo" aria-hidden="true"><i class="fa-solid fa-person-digging"></i></span>
+                            <h3 class="card__title">Upload New Photos</h3>
+                            <p class="card__text">I have another 6 months worth of pictures that I need to add to my Gallery section.</p>
+                            <div class="card__footer"><span class="tag tag--warning">In progress</span></div>
                         </div>
-                        <div class="project-item">
-                            <h3 class="to-do">Self-Host Webpage</h3>
-                            <p>Currently, I am having this webpage hosted by a third-party. My goal is to self-host on my own Home Lab I have running.</p>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon project__icon--todo" aria-hidden="true"><i class="fa-solid fa-person-digging"></i></span>
+                            <h3 class="card__title">Self-Host Webpage</h3>
+                            <p class="card__text">Currently, I am having this webpage hosted by a third-party. My goal is to self-host on my own Home Lab I have running.</p>
+                            <div class="card__footer"><span class="tag tag--warning">In progress</span></div>
                         </div>
-                        <div class="project-item">
-                            <h3 class="to-do">Health & Wellness</h3>
-                            <p>As someone who is very passionate about working out and physical activity, I would love to post my many workout splits I have put together over the years.</p>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon project__icon--todo" aria-hidden="true"><i class="fa-solid fa-person-digging"></i></span>
+                            <h3 class="card__title">Health &amp; Wellness</h3>
+                            <p class="card__text">As someone who is very passionate about working out and physical activity, I would love to post my many workout splits I have put together over the years.</p>
+                            <div class="card__footer"><span class="tag tag--warning">In progress</span></div>
                         </div>
-                        <div class="project-item">
-                            <h3 class="to-do">Update Phone View of Website</h3>
-                            <p>I have adjusted the phone view slightly so it is useable. The goal would be to add a hamburger sidemenu button for my page tabs. </p>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon project__icon--todo" aria-hidden="true"><i class="fa-solid fa-person-digging"></i></span>
+                            <h3 class="card__title">Update Phone View of Website</h3>
+                            <p class="card__text">I have adjusted the phone view slightly so it is useable. The goal would be to add a hamburger sidemenu button for my page tabs.</p>
+                            <div class="card__footer"><span class="tag tag--warning">In progress</span></div>
                         </div>
-                        <div class="project-item">
-                            <h3 class="to-do">Webpage Automation</h3>
-                            <p>With some of my goals for the website, I would love to automate some of the setions like my Gallery and some of my Career items.</p>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon project__icon--todo" aria-hidden="true"><i class="fa-solid fa-person-digging"></i></span>
+                            <h3 class="card__title">Webpage Automation</h3>
+                            <p class="card__text">With some of my goals for the website, I would love to automate some of the sections like my Gallery and some of my Career items.</p>
+                            <div class="card__footer"><span class="tag tag--warning">In progress</span></div>
                         </div>
-                    </div>
-                    <div class="column-2">
-                        <h2>Completed Projects</h2>
-                        <div class="project-item">
-                            <h3 class="complete">IT Career Page - Resume Button</h3>
-                            <p> Along with the digital resume, I have added a download button for my latest resume.</p>
-                        </div>
-                        <div class="project-item">
-                            <h3 class="complete">IT Career Page - Learning Progression Bars</h3>
-                            <p>As I am working through my courses and other skills, I wanted to create an easy way to update people on my progression within the skill/skillset</p>
-                        </div>
-                        <div class="project-item">
-                            <h3 class="complete">Add Photos to Gallery</h3>
-                            <p>I have had the ability to take a lot of pictures of my life over the last 2 years and I would love to place them somewhere!</p>
-                        </div>
-                        <div class="project-item">
-                            <h3 class="complete">Add a Professional Footer</h3>
-                            <p>Adding a clean and professional footer will give the website a more professional feel for something that is very new to me.</p>
-                        </div>
-                        <div class="project-item">
-                            <h3 class="complete">Create Project Page</h3>
-                            <p>A page dedicated to projects I have completed and projects I want to complete.</p>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
-        </main>
+        </section>
 
-
-         <!---------- Footer ------------>
-
-        <footer class="footer">
-            <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
+        <section class="section section--tight section--alt" aria-labelledby="completed-title">
+            <div class="container">
+                <h2 class="section-title" id="completed-title">
+                    Completed Projects <span class="projects__count" aria-hidden="true">5</span>
+                </h2>
+                <ul class="grid projects__grid" role="list">
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+                            <h3 class="card__title">IT Career Page &ndash; Resume Button</h3>
+                            <p class="card__text">Along with the digital resume, I have added a download button for my latest resume.</p>
+                            <div class="card__footer"><span class="tag">Complete</span></div>
+                        </div>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+                            <h3 class="card__title">IT Career Page &ndash; Learning Progression Bars</h3>
+                            <p class="card__text">As I am working through my courses and other skills, I wanted to create an easy way to update people on my progression within the skill/skillset.</p>
+                            <div class="card__footer"><span class="tag">Complete</span></div>
+                        </div>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+                            <h3 class="card__title">Add Photos to Gallery</h3>
+                            <p class="card__text">I have had the ability to take a lot of pictures of my life over the last 2 years and I would love to place them somewhere!</p>
+                            <div class="card__footer"><span class="tag">Complete</span></div>
+                        </div>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+                            <h3 class="card__title">Add a Professional Footer</h3>
+                            <p class="card__text">Adding a clean and professional footer will give the website a more professional feel for something that is very new to me.</p>
+                            <div class="card__footer"><span class="tag">Complete</span></div>
+                        </div>
+                    </li>
+                    <li class="card project">
+                        <div class="card__body">
+                            <span class="card__icon project__icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+                            <h3 class="card__title">Create Project Page</h3>
+                            <p class="card__text">A page dedicated to projects I have completed and projects I want to complete.</p>
+                            <div class="card__footer"><span class="tag">Complete</span></div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="social-icon">
-                <li class="social-icon__item"><a class="social-icon__link" href="mailto:paquetteb21@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/bennyP251/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                </a></li>
-            </ul>
-            <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="/itcareer/">IT Career</a></li>
-                <li class="menu__item"><a class="menu__link" href="/techblog/">Tech Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="/gallery/">Gallery</a></li>
-                <li class="menu__item"><a class="menu__link" href="/projects/">Projects</a></li>
-            </ul>
-
-            <p>&copy;2025 Benjamin Paquette | All Rights Reserved</p>
-
-        </footer>
-          
-    </body>
-    
-    
-     <!-- This section is for scripts -->
-    
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <script>
-    
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-    
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-
-</html>
+        </section>

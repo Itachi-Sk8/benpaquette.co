@@ -1,0 +1,48 @@
+---
+# NEW POST CHECKLIST
+# 1. Copy this file to _posts/YYYY-MM-DD-slug.html (the date is the publish date).
+# 2. Fill in the front matter below. Everything else on the page (header, date,
+#    tag, read time, topics, prev/next links, the card on /techblog/, the sitemap,
+#    <title>, description, Open Graph and BlogPosting JSON-LD) is generated from it.
+# 3. Write the body under the second "---" as plain HTML (see the examples).
+# Preview with drafts: bundle exec jekyll serve --drafts
+title: "Post Title"
+# Optional: title with manual line breaks for the <h1> only.
+# title_html: "Tech Resource Guide:<br>Grey Hack"
+date: 2025-01-31
+# URL of the post. Keep it once published; never change it afterwards.
+permalink: /techblog/post-slug/
+# One sentence for search results and link previews.
+description: "One sentence summary of the post."
+# Category tag: Personal = "tag", Career = "tag tag--info", Resources = "tag tag--warning".
+category: Personal
+tag_class: tag
+# Minutes, rounded up.
+read_time: 5
+topics: [IT, Career]
+# Card text on /techblog/ (HTML allowed, e.g. <b>).
+summary: "Two or three sentences for the card on the Tech Blog page."
+# Card photo: web-sized copies in assets/img/blog/ (800px long edge + a larger one).
+# width/height are the 800px file's real pixels. Add `class: blog-card__img--top`
+# to keep the top of a tall photo in the 16:10 crop.
+card:
+  src: /assets/img/blog/IMAGE-800.jpg
+  srcset: /assets/img/blog/IMAGE-800.jpg 800w, /assets/img/blog/IMAGE-1600.jpg 1600w
+  width: 800
+  height: 500
+  alt: "Describe the card photo"
+# Share image for link previews (og:image): usually the card photo's large copy.
+image:
+  path: /assets/img/blog/IMAGE-1600.jpg
+  width: 1600
+  height: 1000
+  alt: "Describe the card photo"
+---
+                    <p>First paragraph. Write paragraphs as plain &lt;p&gt; elements with no &lt;br&gt; between them; .prose handles spacing.</p>
+                    <!-- Image near the top of the post: no loading="lazy", add fetchpriority="high" -->
+                    <img class="post__image" src="/assets/img/blog/IMAGE-800.jpg" srcset="/assets/img/blog/IMAGE-800.jpg 800w, /assets/img/blog/IMAGE-1600.jpg 1600w" sizes="(min-width: 800px) 44rem, 100vw" alt="Describe the image" width="800" height="500" fetchpriority="high">
+                    <p>Second paragraph.</p>
+                    <!-- Any later image: loading="lazy". Small logos: class="post__image post__image--logo" -->
+                    <img class="post__image" src="/assets/img/blog/IMAGE2-800.jpg" srcset="/assets/img/blog/IMAGE2-800.jpg 800w, /assets/img/blog/IMAGE2-1600.jpg 1600w" sizes="(min-width: 800px) 44rem, 100vw" alt="Describe the image" width="800" height="500" loading="lazy">
+                    <!-- Code: <pre><code>...</code></pre>. Tables: wrap in <div class="table-wrap">. Video: wrap the <iframe> in <div class="embed">. -->
+                    <p class="post__signoff">~ Ben Paquette</p>
