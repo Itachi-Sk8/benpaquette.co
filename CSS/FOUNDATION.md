@@ -125,7 +125,7 @@ Files:
 ```
 
 - **One `<h1>` per page.** Headings go in order after it (h2, h3). Don't use `<h1>`/`<h4>` for styling (e.g. the old `.cert-title` h1s and the `h4.category` elements). Use the right element and style it with a class.
-- `.page-header__title` draws the green bar under itself, which replaces the old `.line-break`.
+- `.page-header__title` has no underline bar. Green is kept for links, buttons, the active nav item and at most one accent per view, so don't add decorative green rules or borders.
 
 ## 5. Design tokens (`:root` in base.css)
 
