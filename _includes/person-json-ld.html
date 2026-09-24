@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": {{ site.author.name | jsonify }},
+        "url": "{{ site.url }}/",
+        "image": "{{ site.url }}/assets/img/profile/ben-headshot-800.jpg",
+        "jobTitle": "IT Support Professional",
+        "worksFor": { "@type": "CollegeOrUniversity", "name": "University of Georgia" },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Georgia Southern University" },
+            { "@type": "CollegeOrUniversity", "name": "Springfield College" }
+        ],
+        "sameAs": {{ site.social.links | jsonify }}
+    }
+    </script>
