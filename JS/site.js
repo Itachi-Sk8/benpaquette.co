@@ -1,4 +1,5 @@
-/* site.js — shared behaviour for every page. No dependencies.
+/* site.js — shared behaviour for every page. No dependencies. Loaded with defer;
+   each page sets html.js with an inline script in <head> so there is no menu flash.
    - Mobile nav toggle (button[aria-controls] + .site-nav.is-open)
    - Marks the current page's nav links with aria-current="page"
    - Fills [data-current-year] with the current year */
@@ -6,7 +7,7 @@
     "use strict";
 
     var root = document.documentElement;
-    root.classList.add("js");
+    root.classList.add("js");   // no-op when the inline head script already ran
 
     // Normalise "/itcareer", "/itcareer/", "/itcareer/index.html" to "/itcareer/".
     function normalise(path) {

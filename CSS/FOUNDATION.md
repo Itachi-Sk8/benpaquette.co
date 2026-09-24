@@ -7,7 +7,7 @@ Files:
 | File | Purpose |
 |---|---|
 | `CSS/base.css` | Tokens, reset, layout primitives, header/nav, page header, components, footer. **Shared: don't put page-specific rules here.** |
-| `JS/site.js` | Mobile nav toggle, `aria-current` on nav links, footer year. No dependencies. |
+| `JS/site.js` | Mobile nav toggle, `aria-current` on nav links, footer year. No dependencies. Loaded with `defer`; the `js` class is set by an inline script in `<head>`. |
 | `CSS/<page>.css` | Page-specific styles only (e.g. `itcareer.css`, `blog.css`, `Blog Posts/blog-post.css`). Loaded **after** `base.css`. |
 
 ## 1. `<head>` (exact order)
@@ -18,21 +18,24 @@ Files:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IT Career | Ben Paquette</title>
     <meta name="description" content="One sentence describing this page.">
+    <meta name="author" content="Ben Paquette">
     <meta name="theme-color" content="#242424">
+    <meta name="color-scheme" content="dark">
     <link rel="icon" type="image/png" href="/Media/favicon.png">
 
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/CSS/base.css">
     <link rel="stylesheet" href="/CSS/PAGE.css">
-    <script src="/JS/site.js"></script>
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="/JS/site.js" defer></script>
 </head>
 ```
 
 - Title format: `Page Name | Ben Paquette`. For a blog post: `Post Title | Ben Paquette`.
 - **Use root-absolute paths** (`/CSS/...`, `/Media/...`, `/techblog/...`) everywhere. Never use `../`.
 - The blog-post stylesheet path contains a space. Write it as `/CSS/Blog%20Posts/blog-post.css`.
-- `site.js` goes in `<head>` **without `defer`**. It adds `class="js"` to `<html>` straight away, so the mobile menu is collapsed before first paint (no flash). The rest of it waits for `DOMContentLoaded`.
+- The one-line inline script adds `class="js"` to `<html>` before first paint, so the mobile menu is collapsed with no flash. Keep it inline in `<head>`. `site.js` itself loads with **`defer`** (nav toggle, `aria-current`, footer year) and never blocks rendering.
 - **Remove** from every page: the ionicons `<script>` tags, the `kit.fontawesome.com` script (it duplicates the cdnjs CSS), `X-UA-Compatible`, the dead `opentab`/`openmenu` code on pages that don't use it, and stray `<title>` tags inside `<body>` (gallery has one).
 
 ## 2. Header + nav (paste right after `<body>`)
