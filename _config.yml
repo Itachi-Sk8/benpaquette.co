@@ -48,6 +48,11 @@ defaults:
       layout: post
       styles:
         - /CSS/blog-post.css
+  # Keep the resume PDF and other files in Media/ out of sitemap.xml.
+  - scope:
+      path: Media
+    values:
+      sitemap: false
 
 # Not part of the public site.
 exclude:

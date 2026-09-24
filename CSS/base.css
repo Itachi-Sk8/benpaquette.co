@@ -328,6 +328,8 @@ hr {
     gap: var(--cluster-gap, var(--space-s));
 }
 
+.cluster--center { justify-content: center; }
+
 /* Responsive auto-fitting grid. Set --grid-min on the element to tune columns. */
 .grid {
     display: grid;
