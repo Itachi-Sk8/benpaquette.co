@@ -492,6 +492,15 @@ hr {
     color: var(--color-heading);
 }
 
+/* Résumé: last nav item, a small outline button */
+.site-nav__cta-item {
+    display: flex;
+    align-items: center;
+    margin-left: var(--space-3xs);
+}
+
+.site-nav__cta { white-space: nowrap; }
+
 /* Mobile menu (JS enabled, below 768px) */
 @media (max-width: 767.98px) {
     .js .nav-toggle { display: inline-flex; }
@@ -532,7 +541,17 @@ hr {
         border-radius: 0;
     }
 
-    .js .site-nav__list li:last-child .site-nav__link { border-bottom: 0; }
+    .js .site-nav__list li:nth-last-child(2) .site-nav__link { border-bottom: 0; }
+
+    .js .site-nav__cta-item {
+        margin: var(--space-xs) 0 0;
+    }
+
+    .js .site-nav__cta {
+        width: 100%;
+        min-height: 2.75rem;
+        font-size: var(--step-0);
+    }
 
     .js .site-nav__link::after {
         left: 0;
@@ -550,6 +569,14 @@ hr {
         transform: translate(-0.5rem, -50%) scaleY(1);
     }
     .js .site-nav__link[aria-current="page"] { color: var(--color-accent); }
+}
+
+/* 768–1023px: tighten the inline nav so all links and the Résumé button fit on one row */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+    .site-header__inner { gap: var(--space-s); }
+    .site-nav__list { gap: 0; }
+    .site-nav__link { padding-inline: var(--space-2xs); }
+    .site-nav__link::after { left: var(--space-2xs); right: var(--space-2xs); }
 }
 
 /* No-JS phone fallback: brand and links stack instead of overflowing */

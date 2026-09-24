@@ -59,6 +59,7 @@ Files:
                 <li><a class="site-nav__link" href="/techblog/">Tech Blog</a></li>
                 <li><a class="site-nav__link" href="/gallery/">Gallery</a></li>
                 <li><a class="site-nav__link" href="/projects/">Projects</a></li>
+                <li class="site-nav__cta-item"><a class="btn btn--outline btn--small site-nav__cta" href="/Media/Resume_Paquette.pdf">R&eacute;sum&eacute;</a></li>
             </ul>
         </nav>
     </div>
@@ -71,6 +72,7 @@ Files:
 
 - Put `aria-current="page"` on the current section's link in the markup as well; it covers visitors without JS. `site.js` sets it anyway, and blog posts under `/techblog/...` highlight "Tech Blog" automatically.
 - Nav links end in a trailing slash (`/itcareer/`). Keep it that way.
+- The last item is the Résumé button (`.site-nav__cta`, an outline `.btn--small`). It becomes a full-width button in the mobile drawer. Between 768 and 1023px the nav is tightened so all six items fit on one row; if you add a nav item, re-check 768px.
 - The old `.title` / `.line-break` / `.header` / `.container-header` markup goes away. The page title now lives inside `<main>` as a `.page-header` (see below). The site name is in the header brand.
 
 ## 3. Footer (paste right before `</body>`)
