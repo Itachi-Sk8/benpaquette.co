@@ -10,6 +10,7 @@ description: >-
 url: "https://benpaquette.work"
 baseurl: ""
 lang: en
+locale: en_US
 timezone: America/New_York
 
 author:
