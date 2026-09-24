@@ -148,6 +148,7 @@
     }
 
     .explore__grid .card__icon { grid-row: span 2; }
+    .explore__grid .card__cue { grid-column: 2; }
 }
 
 @media (min-width: 600px) {

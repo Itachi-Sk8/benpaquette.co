@@ -210,6 +210,7 @@ Phone-only override: `@media (max-width: 599.98px)`.
 - `.card--link` together with the single `.card__link` makes the whole card clickable (a stretched `::after`), and gives it a hover lift and focus ring. Leave both off for static cards (e.g. project items).
 - `.card__media` crops images to 16:10. Change the ratio with `--card-ratio: 4 / 3`.
 - `.card__icon` is a green-tinted icon tile.
+- `.card__cue` is the visible "Read post →" style cue on `.card--link` cards (`<span class="card__cue" aria-hidden="true">Read post <i class="fa-solid fa-arrow-right"></i></span>`). Every whole-card link gets one so it reads as a link without hover.
 
 **Tags.** `.tag` is a green pill ("Personal"). Add `.tag--info` (blue, the blog's "Career" category), `.tag--warning` (yellow, "Resources") or `.tag--danger` (red), or set a custom `--tag-color`. The text colour is lifted toward white automatically so every variant stays above 4.5:1; check a custom colour against `--color-surface` before using it.
 

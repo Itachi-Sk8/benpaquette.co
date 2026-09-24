@@ -751,6 +751,28 @@ hr {
     font-size: 1.15rem;
 }
 
+/* Visible "go" cue on whole-card links, so they read as links without hover.
+   aria-hidden in markup: the card's link text is its title. */
+.card__cue {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    margin-top: auto;
+    color: var(--color-accent);
+    font-size: var(--step--1);
+    font-weight: 600;
+}
+
+.card__cue i {
+    font-size: 0.85em;
+    transition: transform var(--dur-fast) var(--ease);
+}
+
+.card--link:hover .card__cue i,
+.card--link:focus-within .card__cue i {
+    transform: translateX(3px);
+}
+
 /* Tags / category pills. Set --tag-color for another category colour.
    Text is lifted 25% toward white on a 10% tint so every variant clears 4.5:1
    on --color-surface (green 5.6, danger 5.4, warning 8.0, info 6.4). */
