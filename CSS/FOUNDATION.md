@@ -227,6 +227,8 @@ Phone-only override: `@media (max-width: 599.98px)`.
 
 **Prose.** Put `.prose` on blog `.post-content` and other long text. It spaces paragraphs, lists, headings, images and blockquotes. **Delete the `<br>` elements between paragraphs** in blog posts, because `.prose` handles the spacing.
 
+Inside `.prose`, long links wrap anywhere, `<pre><code>` blocks scroll sideways, tables go in `<div class="table-wrap">` (scrolls if too wide) and video iframes go in `<div class="embed">` (16:9).
+
 Not provided (build these in page CSS, using tokens):
 - IT Career tabs and progress bars. For tabs, use `<button role="tab" aria-selected aria-controls>` inside `role="tablist"` instead of `<p onclick>`. Page-local JS is fine.
 - Gallery masonry.
