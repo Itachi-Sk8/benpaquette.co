@@ -58,7 +58,6 @@ defaults:
 exclude:
   - Archive/
   - HTML/
-  - Blog/
   - "CSS/Not Live/"
   - CSS/FOUNDATION.md
   - assets/img/MANIFEST.md

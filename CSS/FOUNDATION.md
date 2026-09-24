@@ -1,113 +1,101 @@
 # Site foundation: how to build a page
 
-This is for anyone migrating a page onto the shared foundation. `index.html` + `CSS/index.css` is the reference implementation. Copy from it.
+The site is built with **Jekyll**; GitHub Pages builds it on every push to the publishing branch. Pages hold only their `<main>` content; the `<head>`, header and footer come from shared includes. `index.html` + `CSS/index.css` is the reference page and `_posts/` holds the blog posts. Copy from them.
 
 Files:
 
 | File | Purpose |
 |---|---|
+| `_config.yml` | Site title, tagline, description, URL, author, social links, plugins (`jekyll-seo-tag`, `jekyll-sitemap`), front-matter defaults, and `exclude:` (files that are not published). |
+| `_layouts/default.html` | Every page: `<head>`, skip link, header, `<main id="main">` with the page content, footer, then any page scripts. |
+| `_layouts/post.html` | Blog posts (wraps `default`): post header, body, prev/next links, "All posts". |
+| `_includes/head.html` | The `<head>` (see §1). |
+| `_includes/header.html`, `_includes/footer.html` | Site header/nav and footer. Nav links come from `_data/navigation.yml`. |
+| `_includes/nav-current.html` | Works out which nav link gets `aria-current="page"`. |
+| `_includes/person-json-ld.html` | Person structured data, on the homepage only (`person_json_ld: true`). |
+| `_data/navigation.yml` | Main and footer nav links, in order. |
+| `_data/gallery.yml` | Gallery photos (id, size, alt text), in page order. |
+| `_posts/YYYY-MM-DD-slug.html` | Blog posts. |
+| `_drafts/post-template.html` | Starting point for a new post. Not published. |
 | `CSS/base.css` | Tokens, reset, layout primitives, header/nav, page header, components, footer. **Shared: don't put page-specific rules here.** |
 | `JS/site.js` | Mobile nav toggle, `aria-current` on nav links, footer year. No dependencies. Loaded with `defer`; the `js` class is set by an inline script in `<head>`. |
 | `CSS/<page>.css` | Page-specific styles only (e.g. `itcareer.css`, `blog.css`, `blog-post.css`). Loaded **after** `base.css`. |
+| `assets/img/` | Web-sized images the site uses (see `assets/img/MANIFEST.md`). |
 
-## 1. `<head>` (exact order)
+This file, `README.md`, `assets/img/MANIFEST.md`, `Archive/`, `HTML/`, `CSS/Not Live/` and the original full-size images are listed under `exclude:` in `_config.yml` and are not published.
 
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IT Career | Ben Paquette</title>
-    <meta name="description" content="One sentence describing this page.">
-    <meta name="author" content="Ben Paquette">
-    <meta name="theme-color" content="#242424">
-    <meta name="color-scheme" content="dark">
-    <link rel="icon" type="image/png" href="/Media/favicon.png">
+## 1. Building, `<head>`, header and footer
 
-    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/CSS/base.css">
-    <link rel="stylesheet" href="/CSS/PAGE.css">
-    <script>document.documentElement.classList.add("js");</script>
-    <script src="/JS/site.js" defer></script>
-</head>
+Needs Ruby and Bundler. From the repo root:
+
+```sh
+bundle install                      # once: the same gems GitHub Pages uses
+bundle exec jekyll serve            # http://localhost:4000, rebuilds on save
+bundle exec jekyll serve --drafts   # also shows _drafts/
+bundle exec jekyll build            # writes the site to _site/ (gitignored)
 ```
 
-- Title format: `Page Name | Ben Paquette`. For a blog post: `Post Title | Ben Paquette`.
-- **Use root-absolute paths** (`/CSS/...`, `/Media/...`, `/techblog/...`) everywhere. Never use `../`.
-- The one-line inline script adds `class="js"` to `<html>` before first paint, so the mobile menu is collapsed with no flash. Keep it inline in `<head>`. `site.js` itself loads with **`defer`** (nav toggle, `aria-current`, footer year) and never blocks rendering.
-- **Remove** from every page: the ionicons `<script>` tags, the `kit.fontawesome.com` script (it duplicates the cdnjs CSS), `X-UA-Compatible`, the dead `opentab`/`openmenu` code on pages that don't use it, and stray `<title>` tags inside `<body>` (gallery has one).
+Changes to `_config.yml` need a restart of `jekyll serve`. `Gemfile.lock` is gitignored because it only resolves on the platform that made it.
 
-## 2. Header + nav (paste right after `<body>`)
+**`<head>`.** `_includes/head.html` outputs, in order: charset, viewport, the `{% seo %}` block, theme-color, color-scheme, favicons (`/assets/img/icons/`), the font preload, Font Awesome, `base.css`, the page's own stylesheets, the inline `js` class script, and `site.js` with `defer`. Don't write a `<title>`, description, author, canonical or Open Graph tag by hand: `{% seo %}` (jekyll-seo-tag) writes all of them from front matter.
 
-```html
-<a class="skip-link" href="#main">Skip to content</a>
+- Title format: `Page Name | Ben Paquette`, from `title:` plus the site title. For a blog post: `Post Title | Ben Paquette`. The homepage has no `title:`, so it gets `Ben Paquette | Information Technology Professional` (site title + `tagline`).
+- `description:` becomes the meta description, `og:description` and the JSON-LD description.
+- `image:` is the link-preview image (`og:image`, `twitter:image`). It defaults to `/assets/img/share/og-default.jpg`; posts set their own.
+- **Use root-absolute paths** (`/CSS/...`, `/assets/...`, `/techblog/...`) everywhere. Never use `../`. The 404 page is served at any missing URL, so relative paths would break there.
+- The one-line inline script adds `class="js"` to `<html>` before first paint, so the mobile menu is collapsed with no flash. `site.js` itself loads with **`defer`** (nav toggle, `aria-current`, footer year) and never blocks rendering.
 
-<header class="site-header">
-    <div class="container site-header__inner">
-        <a class="site-brand" href="/">
-            <span class="site-brand__mark" aria-hidden="true">BP</span>
-            Ben Paquette
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-            <span class="nav-toggle__bars" aria-hidden="true"></span>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Main">
-            <ul class="site-nav__list">
-                <li><a class="site-nav__link" href="/">Home</a></li>
-                <li><a class="site-nav__link" href="/itcareer/">IT Career</a></li>
-                <li><a class="site-nav__link" href="/techblog/">Tech Blog</a></li>
-                <li><a class="site-nav__link" href="/gallery/">Gallery</a></li>
-                <li><a class="site-nav__link" href="/projects/">Projects</a></li>
-                <li class="site-nav__cta-item"><a class="btn btn--outline btn--small site-nav__cta" href="/Media/Resume_Paquette.pdf">R&eacute;sum&eacute;</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+**Header and nav** (`_includes/header.html`). `nav-current.html` marks the current section's link with `aria-current="page"`: Home only on `/`, any other link when the page URL starts with it, so posts under `/techblog/...` mark "Tech Blog". `site.js` applies the same rule in the browser; keep the two in step.
 
-<main id="main">
-    ... page content ...
-</main>
-```
-
-- Put `aria-current="page"` on the current section's link in the markup as well; it covers visitors without JS. `site.js` sets it anyway, and blog posts under `/techblog/...` highlight "Tech Blog" automatically.
-- Nav links end in a trailing slash (`/itcareer/`). Keep it that way.
+- Nav links end in a trailing slash (`/itcareer/`). Keep it that way. To add one, add it to `_data/navigation.yml`; it appears in the header and the footer.
 - The last item is the Résumé button (`.site-nav__cta`, an outline `.btn--small`). It becomes a full-width button in the mobile drawer. Between 768 and 1023px the nav is tightened so all six items fit on one row; if you add a nav item, re-check 768px.
-- The old `.title` / `.line-break` / `.header` / `.container-header` markup goes away. The page title now lives inside `<main>` as a `.page-header` (see below). The site name is in the header brand.
 
-## 3. Footer (paste right before `</body>`)
-
-```html
-<footer class="site-footer">
-    <div class="site-footer__waves" aria-hidden="true">
-        <div class="site-footer__wave"></div>
-        <div class="site-footer__wave"></div>
-        <div class="site-footer__wave"></div>
-    </div>
-    <div class="container site-footer__inner">
-        <ul class="social-links">
-            <li><a class="social-links__link" href="mailto:paquetteb21@gmail.com" aria-label="Email Ben"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
-            <li><a class="social-links__link" href="https://github.com/bennyP251/" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
-            <li><a class="social-links__link" href="https://www.linkedin.com/in/benjamin-paquette-/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
-        </ul>
-        <nav aria-label="Footer">
-            <ul class="footer-nav__list">
-                <li><a class="footer-nav__link" href="/">Home</a></li>
-                <li><a class="footer-nav__link" href="/itcareer/">IT Career</a></li>
-                <li><a class="footer-nav__link" href="/techblog/">Tech Blog</a></li>
-                <li><a class="footer-nav__link" href="/gallery/">Gallery</a></li>
-                <li><a class="footer-nav__link" href="/projects/">Projects</a></li>
-            </ul>
-        </nav>
-        <p class="site-footer__copy">&copy; <span data-current-year>2025</span> Benjamin Paquette. All rights reserved.</p>
-    </div>
-</footer>
-```
+**Footer** (`_includes/footer.html`).
 
 - The footer is green with **dark text** (`--color-on-accent`). White on `#02B875` fails WCAG contrast (2.6:1). Don't switch it back to white.
 - The waves use `/Media/wave_green.png` (referenced relative to base.css). They sit above the footer. The footer gets its own top margin, so don't add extra spacing or `padding-bottom` hacks to make room for them.
-- Delete every old `.footer`, `.wave`, `#wave1..4`, `.social-icon*`, `.menu*` rule from the page CSS.
+
+## 2. How to add a page
+
+1. Make a folder named after the URL with an `index.html` in it, e.g. `certifications/index.html` for `/certifications/`.
+2. Start the file with front matter, then only the content that goes inside `<main>` (skeleton in §4):
+
+```html
+---
+title: Certifications
+description: "One sentence describing this page."
+styles:
+  - /CSS/certifications.css
+# Optional page scripts, loaded at the end of <body>:
+# scripts:
+#   - /JS/tabs.js
+---
+        <header class="page-header container">
+            <h1 class="page-header__title">Certifications</h1>
+        </header>
+        ...
+```
+
+3. Put page-only rules in `CSS/certifications.css` (§9), and add the page to `_data/navigation.yml` if it belongs in the nav.
+4. It is added to `sitemap.xml` automatically. Add `sitemap: false` to the front matter to leave a page out.
+
+## 3. How to add a blog post
+
+1. Copy `_drafts/post-template.html` to `_posts/YYYY-MM-DD-slug.html`. The date in the file name is the publish date.
+2. Fill in the front matter; the template explains each field:
+   - `title` (plus optional `title_html` if the `<h1>` needs a `<br>`), `date`, `permalink: /techblog/slug/`, `description`
+   - `category` and `tag_class` (Personal = `tag`, Career = `tag tag--info`, Resources = `tag tag--warning`), `read_time` (minutes, rounded up), `topics`
+   - `summary` (card text), `card` (card photo: `src`, `srcset`, `width`, `height`, `alt`, optional `class`), `image` (share image)
+3. Write the body under the front matter as plain HTML: `<p>` paragraphs, `<img class="post__image" ...>` images, and `<p class="post__signoff">~ Ben Paquette</p>` at the end.
+4. Nothing else to edit. The post page, its card on `/techblog/` (newest first; the newest is featured), prev/next links (by date), the sitemap entry and BlogPosting JSON-LD are all generated.
+
+- **Never change a published post's `permalink`**; it is the post's URL.
+- Images: put web-sized copies in `assets/img/blog/` (an 800px long-edge copy plus a larger one, up to 1600px) and add them to `assets/img/MANIFEST.md`. Use `src` = the 800 file, a `srcset` with both, `sizes="(min-width: 800px) 44rem, 100vw"` and the 800 file's real `width`/`height`. The first image near the top of a post gets `fetchpriority="high"` and no `loading`; every other image gets `loading="lazy"`.
+- Don't type `{{` or `{%` in post text; Jekyll reads them as Liquid. Wrap such text in `{% raw %}...{% endraw %}`.
 
 ## 4. Page skeleton for inner pages
+
+The layout already writes `<main id="main">`; a page file holds only what goes inside it. The wrapper is shown here for context.
 
 ```html
 <main id="main">
@@ -198,11 +186,11 @@ Phone-only override: `@media (max-width: 599.98px)`.
 - `.btn--small` is compact.
 - The IT Career "Download Resume" button becomes `<a class="btn" href="/Media/Resume_Paquette.pdf" download>`.
 
-**Cards.** Blog cards, project items, explore links.
+**Cards.** Blog cards, project items, explore links. (Blog cards on `/techblog/` are generated from post front matter; this is the markup they produce. The newest post adds `.blog-card--featured`, which spans two columns from 1024px.)
 
 ```html
 <article class="card card--link">
-    <div class="card__media"><img src="/CSS/images/blog-post-1.jpg" alt="..." loading="lazy" width="800" height="500"></div>
+    <div class="card__media"><img src="/assets/img/blog/blog-post-1-800.jpg" srcset="/assets/img/blog/blog-post-1-800.jpg 800w, /assets/img/blog/blog-post-1-1600.jpg 1600w" sizes="(min-width: 1024px) 33vw, (min-width: 600px) 50vw, 100vw" alt="..." loading="lazy" width="800" height="533"></div>
     <div class="card__body">
         <p class="blog-card__meta"><time datetime="2024-05-12">May 12, 2024</time><span aria-hidden="true">&middot;</span><span>5 min read</span></p>
         <h2 class="card__title"><a class="card__link" href="/techblog/slug/">Title</a></h2>
@@ -238,7 +226,7 @@ Not provided (build these in page CSS, using tokens):
 - **Page CSS holds only page-specific rules.** It starts with `/* <page>.css — <page> only. Loaded after base.css. Mobile-first. */`. Delete the duplicated reset/header/nav/footer blocks entirely. Don't re-declare `*`, `body`, `nav ul li`, `.container` or `.footer`.
 - **Naming:** BEM-ish, `block__element--modifier`, prefixed by the page's block (`.about__photo`, `.blog-card__meta`, `.gallery__grid`). Don't style bare element selectors like `nav ul li` or `h1` in page CSS. Scope them to a class.
 - **Mobile-first:** base rules target phones, and `min-width` queries add columns and size. Don't use fixed px widths. Use `%`, `fr`, `min()`, `clamp()` and tokens. Sizes of text come from `--step-*`.
-- **Images:** base.css already applies `max-width: 100%; height: auto`. Add `alt` (empty `alt=""` for decorative images), `loading="lazy"` for anything below the fold, and `width`/`height` attributes when you know them, to avoid layout shift. **Never modify, move or re-encode anything in `images/` or `CSS/images/`**. Just reference them.
+- **Images:** base.css already applies `max-width: 100%; height: auto`. Add `alt` (empty `alt=""` for decorative images), `loading="lazy"` for anything below the fold, and `width`/`height` attributes when you know them, to avoid layout shift. Use the web-sized copies in `assets/img/` with `srcset`/`sizes` (see §3 and `assets/img/MANIFEST.md`), never the full-size originals. **Never modify, move or delete anything in `images/` or `CSS/images/`**: those originals stay in the repo but are excluded from the build. If a page starts referencing one again, remove it from `exclude:` in `_config.yml`.
 - **Links:** external links get `target="_blank" rel="noopener"`.
 - **Icons:** Font Awesome icons get `aria-hidden="true"`. Icon-only links get an `aria-label`.
 - **Focus:** base.css gives everything a green `:focus-visible` outline. Don't remove outlines. If you restyle focus, keep it visible.

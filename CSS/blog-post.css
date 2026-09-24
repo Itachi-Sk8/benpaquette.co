@@ -1,5 +1,5 @@
 /* blog-post.css — individual tech blog posts only. Loaded after base.css. Mobile-first.
-   Markup: see Blog/post-template.html. Body text spacing comes from .prose in base.css. */
+   Markup: _layouts/post.html (new posts: _drafts/post-template.html). Body text spacing comes from .prose in base.css. */
 
 /* ---------- Post header ---------- */
 .post__header {
