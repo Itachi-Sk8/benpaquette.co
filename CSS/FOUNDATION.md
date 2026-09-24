@@ -200,15 +200,17 @@ Phone-only override: `@media (max-width: 599.98px)`.
 <article class="card card--link">
     <div class="card__media"><img src="/CSS/images/blog-post-1.jpg" alt="..." loading="lazy" width="800" height="500"></div>
     <div class="card__body">
+        <p class="blog-card__meta"><time datetime="2024-05-12">May 12, 2024</time><span aria-hidden="true">&middot;</span><span>5 min read</span></p>
         <h2 class="card__title"><a class="card__link" href="/techblog/slug/">Title</a></h2>
         <p class="card__text">Summary</p>
-        <div class="card__footer"><span class="tag">Personal</span><span>4.5 min read</span></div>
+        <div class="card__footer"><span class="tag">Personal</span><span class="card__cue" aria-hidden="true">Read post <i class="fa-solid fa-arrow-right"></i></span></div>
     </div>
 </article>
 ```
 
 - `.card--link` together with the single `.card__link` makes the whole card clickable (a stretched `::after`), and gives it a hover lift and focus ring. Leave both off for static cards (e.g. project items).
 - `.card__media` crops images to 16:10. Change the ratio with `--card-ratio: 4 / 3`.
+- Dates are written `May 12, 2024` (no "th"/"nd") inside `<time datetime="YYYY-MM-DD">`. Read times are `N min read`, rounded up to a whole minute.
 - `.card__icon` is a green-tinted icon tile.
 - `.card__cue` is the visible "Read post →" style cue on `.card--link` cards (`<span class="card__cue" aria-hidden="true">Read post <i class="fa-solid fa-arrow-right"></i></span>`). Every whole-card link gets one so it reads as a link without hover.
 
