@@ -41,3 +41,33 @@
 .blog-card .card__media .blog-card__img--top {
     object-position: 50% 15%;
 }
+
+/* ---------- Featured (newest) post ---------- */
+/* On laptops the newest post spans two of the three columns, photo beside text. */
+@media (min-width: 1024px) {
+    .blog-card--featured {
+        grid-column: span 2;
+        flex-direction: row;
+    }
+
+    /* The photo fills the text column's height instead of setting it */
+    .blog-card--featured .card__media {
+        position: relative;
+        flex: 0 0 55%;
+        aspect-ratio: auto;
+        min-height: 16rem;
+    }
+
+    .blog-card--featured .card__media img {
+        position: absolute;
+        inset: 0;
+    }
+
+    .blog-card--featured .card__body {
+        padding: var(--space-l);
+    }
+
+    .blog-card--featured .card__title {
+        font-size: var(--step-2);
+    }
+}
